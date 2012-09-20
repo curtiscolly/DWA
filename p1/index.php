@@ -6,6 +6,8 @@
     <title>Spritely 0.6 Examples</title>
     <meta name="keywords" content="" />    
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
+	
+		<link rel="stylesheet" href="css/jquery.stickynotes.css" type="text/css">
     <style type="text/css">
         #stage {
             top: 0px;
@@ -167,6 +169,16 @@
         })(jQuery);
     
     </script>
+	
+	
+	<!--Start scripts for the sticky notes stuff-->
+    <script type="text/javascript" src="script/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="script/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="script/jquery.stickynotes.js"></script>
+	<!--End Scripts for the stikey notes stuff -->
+	
+	
+	
 </head>
 <body>
 <div id="container">
@@ -195,7 +207,60 @@
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
-        <p>Here is some content</p>
+        <p>Here is the start of the main content</p>
+	<h1>Sticky Notes Demo</h1>
+        <div id="notes" style="width:800px;height:500px;">
+        </div>
+		<script type="text/javascript" charset="utf-8">
+			var edited = function(note) {
+				alert("Edited note with id " + note.id + ", new text is: " + note.text);
+			}
+			var created = function(note) {
+				alert("Created note with id " + note.id + ", text is: " + note.text);
+			}
+			
+			var deleted = function(note) {
+				alert("Deleted note with id " + note.id + ", text is: " + note.text);
+			}
+			
+			var moved = function(note) {
+				alert("Moved note with id " + note.id + ", text is: " + note.text);
+			}	
+			
+			var resized = function(note) {
+				alert("Resized note with id " + note.id + ", text is: " + note.text);
+			}					
+		
+			jQuery(document).ready(function() {
+				var options = {
+					notes:[{"id":1,
+					      "text":"edited with notepad++",
+						  
+
+						  "pos_x": 50,
+						  "pos_y": 50,	
+						  "width": 200,							
+						  "height": 200,													
+					    }]
+					,resizable: true
+					,controls: true 
+					,editCallback: edited
+					,createCallback: created
+					,deleteCallback: deleted
+					,moveCallback: moved					
+					,resizeCallback: resized					
+					
+				};
+				jQuery("#notes").stickyNotes(options);
+				
+				
+			});
+		</script>		
+		
+		<p>Here is the end of the main content</p>
+		
+		
+		
     
              
      </div>
