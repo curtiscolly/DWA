@@ -182,23 +182,97 @@
     <div id="bird"></div>
     
     <div id="mainContent">
-       
+        <h1>Spritely 0.6 Examples</h1>
         <div id="panels">
-           
+            <p>Here's a sneak preview of some new Spritely methods (version 0.6). Check the source code to see
+            how these functions work - they should be fairly easy to follow and we hope you have fun using them.
+            Check back on this site or follow our <a href="http://twitter.com/_spritely_">Twitter page</a>
+            where we'll be announcing the final release and full documentation when it's ready. <a href="http://www.spritely.net/">Click here to visit our website.</a></p>
             <p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-        <p>Here is some content</p>
+            <p>The lockTo example, introduced in spritely 0.3b can be found in <a href="lockTo.html">lockTo.html</a></p>
+            <p>&nbsp;</p>
     
-             
-     </div>
+            <ul>
+                <li><a href="#" onclick="page.show_panel('#panel4')">Cool combined actions to modify a whole scene</a></li>
+                <li><a href="#" onclick="page.show_panel('#panel1')">Moving background elements at fixed speeds; stopping and starting backgrounds &amp; changing direction</a></li>
+                <li><a href="#" onclick="page.show_panel('#panel2')">Moving background elements at relative speeds</a></li>
+                <li><a href="#" onclick="page.show_panel('#panel3')">Changing the speed of and stopping and starting sprites; changing sprite 'states'</a></li>
+            </ul>
+    
+            <p>&nbsp;</p>
+            <div id="panel1" class="panel">
+                <h2>Moving background elements at fixed speeds</h2>
+                <p>You can move multiple background elements together, and they will all
+                move at the same speed...</p>
+                <button onclick="$('#hill1, #hill2, #clouds').spSpeed(40);">.spSpeed(40)</button>
+                <button onclick="$('#hill1, #hill2, #clouds').spSpeed(20);">.spSpeed(20)</button>
+                <button onclick="$('#hill1, #hill2, #clouds').spSpeed(3);">.spSpeed(3)</button>
+    
+                <button onclick="$('#hill1, #hill2, #clouds').spSpeed(1);">.spSpeed(1)</button>
+                <button onclick="$('#hill1, #hill2, #clouds').spStop();">.spStop()</button>
+                <button onclick="$('#hill1, #hill2, #clouds').spStart();">.spStart()</button>
+                <button onclick="$('#hill1, #hill2, #clouds').spToggle();">.spToggle()</button>
+                <button onclick="$('#hill1, #hill2, #clouds').spChangeDir('left');">.spChangeDir('left')</button>
+                <button onclick="$('#hill1, #hill2, #clouds').spChangeDir('right');">.spChangeDir('right')</button>
+                                
+                <p>&nbsp;</p>
+                <h2>Vertical Panning</h2>
+                <button onclick="$('#balloons').spChangeDir('up');">.spChangeDir('up')</button>
+                <button onclick="$('#balloons').spChangeDir('down');">.spChangeDir('down')</button>
+            </div>
+            <div id="panel2" class="panel">
+                <h2>Moving background elements at relative speeds</h2>
+                <button onclick="$('#hill1, #hill2, #clouds').spRelSpeed(40);">.spRelSpeed(40)</button>
+                <button onclick="$('#hill1, #hill2, #clouds').spRelSpeed(20);">.spRelSpeed(20)</button>
+                <button onclick="$('#hill1, #hill2, #clouds').spRelSpeed(3);">.spRelSpeed(3)</button>
+                <p>&nbsp;</p>
+    
+                <p>You can change the relative speed of a number of background elements at once
+                with the .spRelSpeed() method. However, before you do this, you must set a 'depth'
+                parameter for each element when you create them with the .pan() method. Please look
+                at the source code of this page for an example.<br /><br />
+                The 'depth' method is a value between 0 and 100 where 0 is the horizon (distant
+                objects which do not move at all) and 100 is for very close-up objects which move
+                very quickly:<br /><br />
+                <img id="depth-explained" src="images/depth-explained.jpg" border="0" />
+                </p>
+            </div>
+            <div id="panel3" class="panel">
+                <h2>Changing the speed of and stopping and starting sprites; changing sprite 'states'.</h2>
+    
+                <button onclick="$('#bird').fps(24);">.fps(24)</button>
+                <button onclick="$('#bird').fps(12);">.fps(12)</button>
+                <button onclick="$('#bird').fps(6);">.fps(6)</button>
+                                <button onclick="$('#bird').fps(1);">.fps(1)</button>
+                <button onclick="$('#bird').spStop();">.spStop()</button>
+                <button onclick="$('#bird').spStop(true);">.spStop(true) (returns to frame 1)</button>
+                <button onclick="$('#bird').spStart();">.spStart()</button>
+    
+                <button onclick="$('#bird').spToggle();">.spToggle()</button>
+                <button onclick="$('#bird').spState(1);">.spState(1)</button>
+                <button onclick="$('#bird').spState(2);">.spState(2)</button>
+                <p>&nbsp;</p>
+                <p>To change a sprite's 'state', you need an image with multiple rows, where
+                each row is a 'state' (1, 2, 3, etc.) and each row contains multiple frames, 
+                like the following image:<br /><br />
+                <img src="images/bird-forward-back.png" border="0" />
+                </p>
+    
+            </div>
+            <div id="panel4" class="panel">
+                <h2>Combining actions to modify a whole scene</h2>
+                <button onclick="actions.fly_slowly_forwards();">actions.fly_slowly_forwards();</button>
+                <button onclick="actions.fly_quickly_forwards();">actions.fly_quickly_forwards();</button>
+                <button onclick="actions.fly_like_lightning_forwards();">actions.fly_like_lightning_forwards();</button><br />
+                <button onclick="actions.fly_slowly_backwards();">actions.fly_slowly_backwards();</button>
+    
+                <button onclick="actions.fly_quickly_backwards();">actions.fly_quickly_backwards();</button>
+                <button onclick="actions.fly_like_lightning_backwards();">actions.fly_like_lightning_backwards();</button>
+                <p>Take a look at the source code to see how this is done. It's amazingly easy to do.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
