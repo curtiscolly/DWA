@@ -172,9 +172,9 @@
 	
 	
 	<!--Start scripts for the sticky notes stuff-->
-    <script type="text/javascript" src="script/jquery-1.3.2.min.js"></script>
-    <script type="text/javascript" src="script/jquery-ui-1.7.2.custom.min.js"></script>
-	<script type="text/javascript" src="script/jquery.stickynotes.js"></script>
+    <script type="text/javascript" src="scripts/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.stickynotes.js"></script>
 	<!--End Scripts for the stikey notes stuff -->
 	
 	
