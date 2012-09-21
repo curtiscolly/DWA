@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eng" lang="eng">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Spritely 0.6 Examples</title>
+    <title>Curtis Colly</title>
     <meta name="keywords" content="" />    
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
 	<link rel="stylesheet" href="css/jquery.stickynotes.css" type="text/css">
@@ -50,6 +50,36 @@
             cursor: pointer;
         }
     </style>
+	
+	
+	<!--Start CSS for the rounded box -->
+	<style type="text/css">
+   .roundedcornr_box_388177 {
+      background: #aedfe5 url(images/roundedcornr_388177_grad.gif) no-repeat;
+   }
+   .roundedcornr_top_388177 div {
+      background: url(images/roundedcornr_388177_tl.gif) no-repeat top left;
+   }
+   .roundedcornr_top_388177 {
+      background: transparent url(images/roundedcornr_388177_tr.gif) no-repeat top right;
+   }
+   .roundedcornr_bottom_388177 div {
+      background: url(images/roundedcornr_388177_bl.gif) no-repeat bottom left;
+   }
+   .roundedcornr_bottom_388177 {
+      background: transparent url(images/roundedcornr_388177_br.gif) no-repeat bottom right;
+   }
+
+   .roundedcornr_top_388177 div, .roundedcornr_top_388177,
+   .roundedcornr_bottom_388177 div, .roundedcornr_bottom_388177 {
+      width: 100%;
+      height: 30px;
+      font-size: 1px;
+   }
+.roundedcornr_content_388177 { margin: 0 30px; }
+	
+	</style>
+	<!--End CSS for the rounded box -->
     
     <!-- IE6 fixes are found in styles/ie6.css -->
     <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="styles/ie6.css" /><![endif]-->
@@ -257,7 +287,23 @@
 		</script>		
 		    </div> <!--Closing notes div -->
 		
-	   </div> <!--Closing panels div -->        
+	   </div> <!--Closing panels div -->   
+
+<div class="roundedcornr_box_388177">
+   <div class="roundedcornr_top_388177"><div></div></div>
+      <div class="roundedcornr_content_388177">
+         Lorem ipsum dolor sit amet, consectetur 
+         adipisicing elit, sed do eiusmod tempor incididunt 
+         ut labore et dolore magna aliqua. Ut enim ad minim 
+         veniam, quis nostrud exercitation ullamco laboris 
+         nisi ut aliquip ex ea commodo consequat. Duis aute 
+         irure dolor in reprehenderit in voluptate velit esse 
+         cillum dolore eu fugiat nulla pariatur. Excepteur 
+         sint occaecat cupidatat non proident, sunt in culpa 
+         qui officia deserunt mollit anim id est laborum.
+      </div>
+   <div class="roundedcornr_bottom_388177"><div></div></div>
+</div>	   
      
 	 
 	 </div> <!--Closing main content div --> 
