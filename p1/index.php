@@ -6,8 +6,7 @@
     <title>Spritely 0.6 Examples</title>
     <meta name="keywords" content="" />    
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
-	
-		<link rel="stylesheet" href="css/jquery.stickynotes.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery.stickynotes.css" type="text/css">
     <style type="text/css">
         #stage {
             top: 0px;
@@ -207,10 +206,10 @@
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
-        <p>Here is the start of the main content</p>
-	<h1>Sticky Notes Demo</h1>
+        
+	
         <div id="notes" style="width:800px;height:500px;">
-        </div>
+        
 		<script type="text/javascript" charset="utf-8">
 			var edited = function(note) {
 				alert("Edited note with id " + note.id + ", new text is: " + note.text);
@@ -256,14 +255,12 @@
 				
 			});
 		</script>		
+		    </div> <!--Closing notes div -->
 		
-		<p>Here is the end of the main content</p>
-		
-		
-		
-    
-             
-     </div>
+	   </div> <!--Closing panels div -->        
+     
+	 
+	 </div> <!--Closing main content div --> 
 
 </body>
 </html>
