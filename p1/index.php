@@ -206,7 +206,7 @@
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
-        
+        <p>Here is some testing text to test the merger stuff</p>
 	
         <div id="notes" style="width:800px;height:500px;">
         
