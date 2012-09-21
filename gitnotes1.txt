@@ -1,0 +1,32 @@
+push from collyco to the github servers
+
+
+test s
+test somethingomething
+
+ssh-keygen -t rsa -C "curtiscolly@yahoo.com"
+git clone git@github.com:curtiscolly/DWA.get
+
+I think
+@pple567
+
+ghostwriter
+rjd2
+
+I have to change permissions every time I do a pull from the git terminal
+
+chmod -R 755 DWA
+git fetch solves the merge issue
+$ git pull --rebase
+To pull remote changes before yours, and then commit. And see if it works.
+
+If this does not work, try this instead:
+
+$ git stash
+$ git pull --rebase
+$ git stash pop
+
+This stuff works if you are not on a branch and need to get on one
+git stash
+git checkout some-branch
+git stash pop

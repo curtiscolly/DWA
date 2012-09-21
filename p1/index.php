@@ -236,7 +236,7 @@
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
-        <p>Here is some testing text to test the merger stuff</p>
+       
 	
         <div id="notes" style="width:800px;height:500px;">
         
@@ -263,7 +263,7 @@
 			jQuery(document).ready(function() {
 				var options = {
 					notes:[{"id":1,
-					      "text":"edited with notepad++",
+					      "text":"Curtis Colly, edited with NotePadd++ hosted on asmallorange, I love the web!!!",
 						  
 
 						  "pos_x": 50,
@@ -292,15 +292,13 @@
 <div class="roundedcornr_box_388177">
    <div class="roundedcornr_top_388177"><div></div></div>
       <div class="roundedcornr_content_388177">
-         Lorem ipsum dolor sit amet, consectetur 
-         adipisicing elit, sed do eiusmod tempor incididunt 
-         ut labore et dolore magna aliqua. Ut enim ad minim 
-         veniam, quis nostrud exercitation ullamco laboris 
-         nisi ut aliquip ex ea commodo consequat. Duis aute 
-         irure dolor in reprehenderit in voluptate velit esse 
-         cillum dolore eu fugiat nulla pariatur. Excepteur 
-         sint occaecat cupidatat non proident, sunt in culpa 
-         qui officia deserunt mollit anim id est laborum.
+         My name is Curtis Colly. I love the field of Computer Science and look forward
+		 to learning PHP and other related topics in this class. This page is hosted on asmallorange.
+		 I started my editing with TextPad but ended up doing most
+		 of it on NotePad++.
+		 <br />
+		 <a href="https://github.com/curtiscolly/DWA.git">Link to my GitHub Repository</a>
+		 
       </div>
    <div class="roundedcornr_bottom_388177"><div></div></div>
 </div>	   
