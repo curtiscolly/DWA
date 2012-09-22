@@ -6,8 +6,8 @@
     <title>Curtis Colly</title>
     <meta name="keywords" content="" />    
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
-	<link rel="stylesheet" href="css/jquery.stickynotes.css" type="text/css">
-	<link rel="stylesheet" href="css/mainstyle.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery.stickynotes.css" type="text/css" />
+	<link rel="stylesheet" href="css/mainstyle.css" type="text/css" />
     <style type="text/css">
         #stage {
             top: 0px;
@@ -243,10 +243,10 @@
         
 		<script type="text/javascript" charset="utf-8">
 			var edited = function(note) {
-				alert("Edited note with id " + note.id + ", new text is: " + note.text);
+				
 			}
 			var created = function(note) {
-				alert("Created note with id " + note.id + ", text is: " + note.text);
+				
 			}
 			
 			var deleted = function(note) {
@@ -254,7 +254,7 @@
 			}
 			
 			var moved = function(note) {
-				alert("Moved note with id " + note.id + ", text is: " + note.text);
+				
 			}	
 			
 			var resized = function(note) {
@@ -264,13 +264,12 @@
 			jQuery(document).ready(function() {
 				var options = {
 					notes:[{"id":1,
-					      "text":"Curtis Colly, edited with NotePadd++ hosted on asmallorange, I love the web!!!",
-						  
-
+					      "text":"Curtis Colly, edited with NotePad++ hosted on asmallorange, I love the web!!!",
 						  "pos_x": 50,
 						  "pos_y": 50,	
 						  "width": 200,							
-						  "height": 200,													
+						  "height": 200,
+                          						  
 					    }]
 					,resizable: true
 					,controls: true 
@@ -281,8 +280,8 @@
 					,resizeCallback: resized					
 					
 				};
-				jQuery("#notes").stickyNotes(options);
 				
+				jQuery("#notes").stickyNotes(options);
 				
 			});
 		</script>		
