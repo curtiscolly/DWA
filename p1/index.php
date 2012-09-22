@@ -289,24 +289,24 @@
 		
 	   </div> <!--Closing panels div -->   
 
- <div class="roundedcornr_box_388177">
-   <div class="roundedcornr_top_388177"><div></div></div>
-      <div class="roundedcornr_content_388177">
-        <p> My name is Curtis Colly. I love the field of Computer Science and look forward
-		 to learning PHP and other related topics in this class. This page is hosted on A Small Orange.
-		 I started my editing with TextPad but ended up doing most
-		 of it on NotePad++. I use the small hosting shared plan with A Small Orange.
-		 <br />
-		 </p>
-		 <a href="https://github.com/curtiscolly/DWA.git">Link to my GitHub Repository</a>
-		 
-      </div>
-   <div class="roundedcornr_bottom_388177"><div></div></div>
- </div>
-</div> 
+           <div class="roundedcornr_box_388177"><div class="roundedcornr_top_388177">
+		   <div>
+		         </div></div> <!-- These 2 close divs are for the above rounded corner divs -->
+                 <div class="roundedcornr_content_388177">
+                      <p> My name is Curtis Colly. I am from New Orleans. I love the field of Computer Science and look forward
+		                  to learning PHP and other related topics in this class. This page is hosted on A Small Orange.
+		                  I started my editing with TextPad but ended up doing most
+		                  of it on NotePad++. I use the small hosting shared plan with A Small Orange.
+		                  <br />
+		              </p>
+		              <a href="https://github.com/curtiscolly/DWA.git">Link to my GitHub Repository</a> 
+                </div>
+             <div class="roundedcornr_bottom_388177"><div></div></div>
+          </div> <!-- Rounded corner closing div tag-->
+    </div> <!--Closing main content div --> 
      
 	 
-	 </div> <!--Closing main content div --> 
+	 </div> <!--Closing container div --> 
 
 </body>
 </html>
