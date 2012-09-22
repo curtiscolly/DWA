@@ -7,6 +7,7 @@
     <meta name="keywords" content="" />    
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
 	<link rel="stylesheet" href="css/jquery.stickynotes.css" type="text/css">
+	<link rel="stylesheet" href="css/mainstyle.css" type="text/css">
     <style type="text/css">
         #stage {
             top: 0px;
@@ -292,11 +293,12 @@
 <div class="roundedcornr_box_388177">
    <div class="roundedcornr_top_388177"><div></div></div>
       <div class="roundedcornr_content_388177">
-         My name is Curtis Colly. I love the field of Computer Science and look forward
+        <p> My name is Curtis Colly. I love the field of Computer Science and look forward
 		 to learning PHP and other related topics in this class. This page is hosted on asmallorange.
 		 I started my editing with TextPad but ended up doing most
 		 of it on NotePad++.
 		 <br />
+		 </p>
 		 <a href="https://github.com/curtiscolly/DWA.git">Link to my GitHub Repository</a>
 		 
       </div>
