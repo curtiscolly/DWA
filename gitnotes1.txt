@@ -30,3 +30,5 @@ This stuff works if you are not on a branch and need to get on one
 git stash
 git checkout some-branch
 git stash pop
+
+git pull origin master
