@@ -1,0 +1,197 @@
+/*-------------------------------------------------------------------------------------------------
+General 
+-------------------------------------------------------------------------------------------------*/
+html {
+  color: #333333;
+  font-size: 1em;
+  font-family: Helvetica, sans-serif;
+}
+@font-face {
+  font-family: 'IcoMoonRegular';
+  src: url('/shared/fonts/icomoon-webfont.eot');
+  src: url('/shared/fonts/icomoon-webfont.eot?#iefix') format('embedded-opentype'), url('/shared/fonts/icomoon-webfont.woff') format('woff'), url('/shared/fonts/icomoon-webfont.ttf') format('truetype'), url('/shared/fonts/icomoon-webfont.svg#IcoMoonRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.icon {
+  font-family: 'IcoMoonRegular';
+}
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+h1 {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: 30px;
+  font-family: 'Bitter';
+  font-weight: 400;
+}
+h2 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Bitter';
+  font-weight: 400;
+}
+a:link {
+  color: #333333;
+}
+a:visited {
+  color: #333333;
+}
+a:hover {
+  color: #333333;
+}
+a:active {
+  color: #333333;
+}
+a.back-link {
+  color: #808080;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+a.back-link:hover {
+  color: #333333;
+}
+/* All caps, small label that goes about input widgets */
+.label {
+  text-transform: uppercase;
+  font-size: 8pt;
+}
+label {
+  text-transform: uppercase;
+  font-size: 8pt;
+}
+table {
+  /*width: 100%;*/
+
+  border-collapse: collapse;
+}
+table td, table th {
+  border: 1px solid #aaaaaa;
+  color: #444;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 5px 8px;
+}
+table th {
+  border-color: #aaaaaa;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #76dee4;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+  text-align: left;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.clear {
+  clear: both;
+}
+/*-------------------------------------------------------------------------------------------------
+Widgets
+-------------------------------------------------------------------------------------------------*/
+button {
+  background-color: #45bcd2;
+  border: 0px;
+  color: white;
+  font-family: verdana;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 5px 13px;
+  /* rounded edges */
+
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+button:hover {
+  background-color: #10889e;
+}
+button.small {
+  font-size: 10px;
+}
+button.medium {
+  font-size: 15px;
+}
+button.large {
+  font-size: 25px;
+}
+button.disabled {
+  background-color: #cccccc;
+}
+button.ajax-loading {
+  background-image: url('/shared/images/ajax-orange-stripe-bar.gif');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  cursor: wait;
+  background-color: #fff478;
+  color: #deb100;
+}
+button.ajax-complete {
+  background-color: #3ffc45;
+  color: #22a826;
+  /* darker green */
+
+}
+button.delete {
+  background-color: #ff0569;
+}
+button.delete:hover {
+  background-color: #d60000;
+}
+/* Text inputs */
+input[type='text'], input[type='password'] {
+  border: 1px solid #cccccc;
+  padding: 3px;
+}
+input[type='text'].medium, input[type='password'].medium {
+  font-size: 20px;
+}
+input[type='text'].large, input[type='password'].large {
+  font-size: 27px;
+}
+textarea {
+  border: 1px solid #cccccc;
+  padding: 5px;
+}
+textarea.large {
+  font-size: 1em;
+}
+.radios {
+  margin: 4px;
+  margin-left: 0px;
+  border: 1px solid #cccccc;
+  overflow: auto;
+  float: left;
+  /* Checked */
+
+}
+.radios label {
+  float: left;
+  cursor: pointer;
+  /* Both checked and unchecked */
+
+}
+.radios label span {
+  text-align: center;
+  padding: 13px 13px;
+  display: block;
+  color: #f2f2f2;
+}
+.radios label input {
+  position: absolute;
+  top: -20px;
+}
+.radios input:checked + span {
+  background-color: #10889e;
+  color: #333333;
+}

@@ -1,0 +1,21 @@
+/* Have to use relative bath to get out of doc root */
+#menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+#layout-content {
+  margin: 50px;
+}
+.red, a.red:link, a.red:hover {
+  color: red;
+}
+a.green:link, a.green:visited {
+  color: green;
+}
+a.orange:link, a.orange:visited {
+  color: orange;
+}
+a.black:link, a.black:visited {
+  color: black;
+}

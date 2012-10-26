@@ -1,0 +1,166 @@
+/* Don't make any changes to these styles up here - leave them as default; scroll down to the bottom where there's a section for editing */
+.CodeMirror {
+  line-height: 1em;
+  font-family: Consolas, Courier, monospace;
+}
+
+.CodeMirror-scroll {
+  overflow: auto;
+  height: 300px;
+  /* This is needed to prevent an IE[67] bug where the scrolled content
+     is visible outside of the scrolling box. */
+  position: relative;
+  outline: none;
+}
+
+.CodeMirror-gutter {
+  position: absolute; left: 0; top: 0;
+  z-index: 10;
+  background-color: #f7f7f7;
+  border-right: 1px solid #eee;
+  min-width: 2em;
+  height: 100%;
+}
+.CodeMirror-gutter-text {
+  color: #aaa;
+  text-align: right;
+  padding: .4em .2em .4em .4em;
+  white-space: pre !important;
+}
+.CodeMirror-lines {
+  padding: .4em;
+  white-space: pre;
+}
+
+.CodeMirror pre {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  border-width: 0; margin: 0; padding: 0; background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0; margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+}
+
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+.CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden;
+}
+
+.CodeMirror textarea {
+  outline: none !important;
+}
+
+.CodeMirror pre.CodeMirror-cursor {
+  z-index: 10;
+  position: absolute;
+  visibility: hidden;
+  border-left: 1px solid black;
+  border-right: none;
+  width: 0;
+}
+.cm-keymap-fat-cursor pre.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: transparent;
+  background: rgba(0, 200, 0, .4);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6600c800, endColorstr=#4c00c800);
+}
+/* Kludge to turn off filter in ie9+, which also accepts rgba */
+.cm-keymap-fat-cursor pre.CodeMirror-cursor:not(#nonsense_id) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.CodeMirror pre.CodeMirror-cursor.CodeMirror-overwrite {}
+.CodeMirror-focused pre.CodeMirror-cursor {
+  visibility: visible;
+}
+
+div.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused div.CodeMirror-selected { background: #d7d4f0; }
+
+.CodeMirror-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, .4);
+}
+
+/* Based on Sublime Text's Monokai theme */
+
+.cm-s-default {background: transparent; color: @darkgrey;}
+.cm-s-default div.CodeMirror-selected {background: yellow !important;}
+.cm-s-default .CodeMirror-gutter {background: @lightgrey; border-right: 0px;}
+.cm-s-default .CodeMirror-gutter-text {color: #d0d0d0;}
+.cm-s-default .CodeMirror-cursor {border-left: 1px solid @darkgrey !important;}
+
+.cm-s-default span.cm-comment {color: #75715e;}
+.cm-s-default span.cm-atom {color: #ae81ff;}
+.cm-s-default span.cm-number {color: #ae81ff;}
+
+.cm-s-default span.cm-property, .cm-s-default span.cm-attribute {color: #1ba65e;}
+.cm-s-default span.cm-keyword {color: #f92672;}
+.cm-s-default span.cm-string {color: #1778a1;}
+
+.cm-s-default span.cm-variable {color: #a6e22e;}
+.cm-s-default span.cm-variable-2 {color: #24bbbb;}
+.cm-s-default span.cm-def {color: #fd971f;}
+.cm-s-default span.cm-error {} /* Errors are disabled via mode/xml/xml.js */
+.cm-s-default span.cm-bracket {color: #f8f8f2;}
+.cm-s-default span.cm-tag {color: #f92672;}
+.cm-s-default span.cm-link {color: #ae81ff;}
+
+.cm-s-default .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+
+
+span.cm-header, span.cm-strong {font-weight: bold;}
+span.cm-em {font-style: italic;}
+span.cm-emstrong {font-style: italic; font-weight: bold;}
+span.cm-link {text-decoration: underline;}
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+
+
+
+
+/* Make your modifications here! */
+.CodeMirror {
+	margin-top:7px;
+	margin-bottom:7px;
+}
+
+.CodeMirror-scroll {
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+	width: 100%;
+}	
+
+.CodeMirror-lines {
+	
+}	
+
+/* Removes padding on inline code, but not block code */
+textarea.code.inline + div.CodeMirror div.CodeMirror-lines {
+	padding: 0px!important; /* added !important as padding is an inline stlye */
+}	
+
+textarea.code.inline + div.CodeMirror > div.CodeMirror-scroll { 
+    max-height: 1em;
+}
+
+textarea.code.inline + div.CodeMirror {
+	border:0px;
+	display:inline-block;
+}	
+	

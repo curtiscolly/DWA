@@ -32,7 +32,7 @@ A email designated to receive messages from the server. Examples:
 	define('SYSTEM_EMAIL', 'webmaster@myapp.com'); 
 
 # Default DB name for this app
-	define('DB', "myapp_com"); 
+	define('DB_NAME', "collycoc_p2_com"); 
 
 
 # If your app is going to have outgoing emails, you should fill in your SMTP settings
@@ -42,5 +42,5 @@ A email designated to receive messages from the server. Examples:
 	//define('SMTP_PASSWORD', '');
 
 # For extra security, you might want to set different salts than what the core uses
-	//define('PASSWORD_SALT', '');
+	//define('PASSWORD_SALT', 'icosidodecahedron');
 	//define('TOKEN_SALT', '');

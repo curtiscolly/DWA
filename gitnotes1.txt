@@ -32,3 +32,188 @@ git checkout some-branch
 git stash pop
 
 git pull origin master
+
+
+
+
+@m@z0n@PI
+@m@z0n@PI
+
+k pavani 617 826 1884
+
+
+define('AWS_API_KEY', 'AKIAJBNE46V6KNJ3RU2A');
+define('AWS_API_SECRET_KEY', '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');
+define('AWS_ASSOCIATE_TAG', 'eventfish-20');
+
+An ASIN (Amazon Standard Item Number) is an alphanumeric token that uniquely identifies items for sale on Amazon
+
+
+1	Create a request object.
+2	Add parameters and their values to the request.
+3	Set up the request.
+4	Send the request.
+
+Eva (415 844 0986)
+
+
+
+Funnier script for the commercial
+
+
+Make the coloring scheme more consistent top bar vs bottom bar
+
+¦~)
+
+
+http://www.youtube.com/watch?v=-tLGWv_n_-s
+http://www.youtube.com/watch?v=-fitwmzQH4A
+
+Go nuts on craigslist
+http://www.handybook.com/ for kelby for eventfish
+
+
+
+When I left the room
+Dan Auerbach
+
+use JSON for the amazon API
+update the .htaccess file to redirect the users that append www 
+to the domain name
+
+
+Where do we get the copy and paste code again?
+
+http://www.youtube.com/user/filmriot
+http://www.youtube.com/user/finalcutking?feature=results_main
+
+
+
+
+
+
+//list step by step event planning 
+//make the borders white
+//Maybe needs a little bit of a motto
+//Facebook, Twitter LinkedIn
+//Input the social networking bar
+
+Add the home button
+Add an about us
+add the checkout button like on giving something
+
+
+Sign into Eventfish
+create your event
+Enjoy your event
+
+
+bottom bar split into 3 
+put home about us 
+
+cut the social networking out of the second page
+Sign in log in on the second pages
+
+
+
+Landing page
+-- one for new users   sign up/log in/sales pitch
+
+-- one for logged in users profile (box and posts)
+
+everything has been done in the users controller
+we might need another controller (such as entries)
+
+	define('DB_HOST', ':/Applications/MAMP/tmp/mysql/mysql.sock'); line 28 in environment.php on my local machine
+
+users
+user_id
+A_I Auto Increment
+created
+modified
+
+unix time stamp (255) is the max for varchar
+p_ means post
+
+Signup
+submits to p_signup
+might want to leave password field blank in WAMP for the local DB
+
+
+What does PASSWORD_SALT mean?
+What does the '/' do in the setcookie function
+
+
+Type that in Any issue will go to arbitration and not the courts
+The 
+
+
+talk to Kelby about the new design proposal
+
+Set up an account with Google Analytics
+Adsense allows us to purchase certain word phrases on google
+
+Change the top bar
+Change the menu page
+The accessories 
+
+3 to 4000 users
+
+Social Media 
+Actually pitching to 100k
+Harvard Entrpreneural pitch sessions
+
+
+After updating the core remember to update the time library
+
+
+collycoc_stuff  / ends with n
+collycoc_p2_com
+
+users  one to many relationship
+example one user having many posts
+
+The user_id is the foreign key, the key that connects
+one table to another
+posts
+
+rename collycoc_posts to posts
+
+
+Ask about the way to reroute to www
+RewriteEngine On
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other URLs to index.php/URL
+RewriteRule .* index.php/$0 [PT,L]
+
+
+
+How do I make it so that once a user clicks a button on my landing 
+page, they are directed to the signup page
+
+many to many relationships
+a join table is simply a table that is going to hold the who
+is following who data
+
+The password is the first name of the user for the seed data
+
+
+update the framework and before that do the time.php thing
+
+
+cultivate989cultivate989cultivate989
+30min obama video
+
+The left of page and roght of page stuff can all be put in the master template
+
+CRUD operations CREATE READ UPDATE DELETE
+
+-> is how you call upon a method in PHP
+
+Why is the $this->user blank stuff not working
+remember to go back and use the sanitize method
+

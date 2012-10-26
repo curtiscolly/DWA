@@ -1,0 +1,14 @@
+#toc {
+  display: none;
+}
+.wrapper {
+  position: static;
+  margin: 0px auto;
+  width: 100%;
+}
+.page {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border: 1px solid black;
+  page-break-after: always;
+}

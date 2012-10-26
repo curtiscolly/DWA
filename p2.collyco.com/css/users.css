@@ -1,0 +1,126 @@
+.left-of-page{
+	float: left;
+	width: 25%;
+	font-family: Helvetica;
+	
+}
+
+.middle-of-page{
+	
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	text-align: center;
+	font-family: Helvetica;
+	color:#5AAD62;
+	background-color: #D3FFEE;
+	
+}
+
+.upper-middle{
+       background-color: #DCE8F2;
+       border-radius:50px;
+
+}
+
+.lower-middle{
+       background-color: #DCE8F2;
+       border-radius:50px;
+
+}
+
+
+
+.right-of-page{
+	background-color: white;
+	width: 25%;
+	float: right;
+	font-family: Helvetica;
+	background-color: #D3FFEE;
+	
+}
+
+
+.square-1 {
+	background: red;
+	color: #fff;
+	height: 23px;
+	left: 15px;
+	padding: 23px;
+	position: absolute;
+	top: 50px;
+	width: 20px;
+	border-radius:100px;
+	
+}
+
+.square-2 {
+	background: blue;
+	color: #fff;
+	height: 25px;
+	left: 40px;
+	padding: 25px;
+	position: absolute;
+	top: 500px;
+	border-radius:110px;
+}
+
+.square-3 {
+	background: green;
+	color: #fff;
+	height: 50px;
+	left: 0px;
+	padding: 25px;
+	position: absolute;
+	top: 120px;
+	width: 50px;
+	border-radius:120px;
+}
+
+.square-4 {
+	background: yellow;
+	color: #fff;
+	height: 30px;
+	left: 0px;
+	padding: 25px;
+	position: absolute;
+	top: 300px;
+	width: 30px;
+	border-radius:150px;
+}
+.right-of-page .square-1 {
+        left:45em;
+
+}
+
+.right-of-page .square-2 {
+        left: 45em;
+
+}
+
+.right-of-page .square-3 {
+        left: 45em;
+
+}
+
+.right-of-page .square-4 {
+        left: 45em;
+
+}
+
+.buttons{
+    background-color:#005DCC;
+    padding:10px;
+    font-size:1.5em;
+    padding-left:40px;
+    padding-right:40px;
+    color:white;
+    border-radius:25px;
+        
+}
+
+body{
+   background-color: #D3FFEE;
+
+}
