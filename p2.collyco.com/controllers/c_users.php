@@ -58,11 +58,12 @@ class users_controller extends base_controller {
 	}
 
 
-	public function login() {
+	public function login($error = NULL) {
 	
 	# Set up view
 		$this->template->content = View::instance('v_users_login');
 		$this->template->title   = "Login";
+		$this->template->content->error = $error;
 
 	# Load CSS / JS
 		$client_files = Array(
@@ -91,14 +92,11 @@ class users_controller extends base_controller {
 		$token = DB::instance(DB_NAME)->select_field($q);
 		
 		
-		
-		
-
 		# Login failed
 		if($token == "") {
-			Router::redirect("/users/login");
-			
+			Router::redirect("/users/login/error"); # Note the addition of the parameter "error"
 		}
+			
 		# Login passed
 		else {
 			setcookie("token", $token, strtotime('+2 weeks'), '/');

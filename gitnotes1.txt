@@ -217,3 +217,31 @@ CRUD operations CREATE READ UPDATE DELETE
 Why is the $this->user blank stuff not working
 remember to go back and use the sanitize method
 
+
+remember to use add the posts and the users_users table to my database online
+
+
+blue states (DEM) 237
+
+Red states (REP) 191
+
+and swing states 110
+
+
+There is an error when a person is not following anyone.
+I might want to fix that
+
+
+get back to the displaying of the user on the profile page
+
+go back over the log stuff
+
+sendgrid username/password
+bubbles1/@pple567
+
+kerfluffle
+
+send the postnump relationship
+
+
+Create a database with amazon id numbers and products
