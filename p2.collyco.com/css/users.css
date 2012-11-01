@@ -125,3 +125,8 @@ body{
    background-color: #D3FFEE;
 
 }
+
+.error p{
+    color:red;
+
+}

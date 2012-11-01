@@ -245,3 +245,26 @@ send the postnump relationship
 
 
 Create a database with amazon id numbers and products
+
+
+
+forgot my password feature
+
+create my special password generator
+
+maybe try a delete this post method
+
+Don't allow users already logged in to go to the login page
+change it so that when a user is followed or unfollowed, we'll 
+send them a message
+
+make it so that you cannot see your own posts
+
+To make this system more secured, we can use a form and use
+the type hidden value='11' under the submit button
+
+// This is to check and see what you just dumped from the database
+into an array
+echo Debug::dump($connections,"connections");
+
+Whatever data we want to use in the view we have to pass it to the view

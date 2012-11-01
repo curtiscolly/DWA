@@ -14,8 +14,8 @@
 	    <input type='password' name='password'>
 	    <br><br>
 	    <? if($error): ?>
-		  <div class='error'>
-			Login failed. Please double check your email and password.
+		  <div class="error">
+			<p>Login failed. Please double check your email and password.</p>
 		  </div>
 		  <br>
 	    <? endif; ?>

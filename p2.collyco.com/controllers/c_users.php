@@ -52,6 +52,9 @@ class users_controller extends base_controller {
 		#reroute them to their profile page
 		$email = $_POST['email'];
 		Router::redirect("/users/profile/$email");
+		
+		#send them an email confirming that they are signed up
+		Email::send();
 
 		
 
