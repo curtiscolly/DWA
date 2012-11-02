@@ -155,5 +155,15 @@ class posts_controller extends base_controller {
 		Router::redirect("/posts/users");
 
 	}
+	
+	public function deletepost($post_id) {
+		$where_condition = 'WHERE user_id = '.$this->user->user_id.' AND post_id = '.$post_id;
+		DB::instance(DB_NAME)->delete('posts', $where_condition);
+		
+		# Send them back
+		Router::redirect("/posts/index");
+	
+	
+	}
 
 }
