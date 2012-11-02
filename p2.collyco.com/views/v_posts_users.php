@@ -8,6 +8,7 @@
 		<!-- If there exists a connection with this user, show a unfollow link -->
 		<? if(isset($connections[$user['user_id']])): ?>
 			<a href='/posts/unfollow/<?=$user['user_id']?>'>Unfollow</a>
+			<a href='/posts/unfollow/<?=$user['user_id']?>'>Unfollow</a> <!-- make this a link to view the profile of this user -->
 		
 		<!-- Otherwise, show the follow link -->
 		<? else: ?>

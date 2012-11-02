@@ -268,3 +268,24 @@ into an array
 echo Debug::dump($connections,"connections");
 
 Whatever data we want to use in the view we have to pass it to the view
+console.log can be used to echo out variables
+
+document.getElementById('lucy').style.backgroundColor = "yellow";
+
+
+click to go back
+click on a user's name to view their post
+
+2 features 
+showing a user's profile one you click on them
+
+Write p3 porposal
+
+https://izze.asmallorange.com:2083/
+click on a user to see their posts
+
+
+http://localhost/posts/users/
+
+List the profile of the person's that you are viewing
+

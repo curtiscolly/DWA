@@ -165,5 +165,65 @@ class posts_controller extends base_controller {
 	
 	
 	}
+	
+	
+	# This function will let you view the profile of a person that you are following
+	public function followers($user_id){
+	
+		# Set up view
+		$this->template->content = View::instance('v_posts_index');
+		$this->template->title   = "Friend Posts";
+		
+		# Load CSS / JS
+			$client_files = Array(
+					"/css/users.css",
+					"/js/users.js",
+			    );
+
+		$this->template->client_files = Utils::load_client_files($client_files); 
+
+
+		# Build a query of the users that the user entered in as a parameter is following
+		$q = "SELECT * 
+			FROM users_users
+			WHERE user_id = ".$user_id;
+			
+	        
+		
+		# Execute our query, storing the results in a variable $connections
+		$connections = DB::instance(DB_NAME)->select_rows($q);
+
+		# In order to query for the posts we need, we're going to need a string of user id's, separated by commas
+		# To create this, loop through our connections array
+		$connections_string = "";
+		foreach($connections as $connection) {
+			$connections_string .= $connection['user_id_followed'].",";
+		}
+		
+		
+
+		# Remove the final comma 
+		$connections_string = substr($connections_string, 0, -1);
+
+		# Connections string example: 10,7,8 (where the numbers are the user_ids of who this user is following)
+
+		# Now, lets build our query to grab the posts
+		$q = "SELECT * 
+			FROM posts 
+			JOIN users USING (user_id)
+			WHERE posts.user_id IN (".$connections_string.")"; # This is where we use that string of user_ids we created
+
+		# Run our query, store the results in the variable $posts
+		$posts = DB::instance(DB_NAME)->select_rows($q);
+
+		# Pass data to the view
+		$this->template->content->posts = $posts;
+
+		# Render view
+		echo $this->template;
+		
+	}
+		
+
 
 }

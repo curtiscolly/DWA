@@ -186,5 +186,15 @@ class users_controller extends base_controller {
 	   
 		}	
 	}
+	
+	
+	# This function will allow a user to view the profile of someone that they are following
+	public function friend($friendName = NULL) {
+	// put if else statements here to check if the user is followed
+	
+	//echo $friendName;
+	Router::redirect("/users/posts/$friendName");
+	
+	}
 
 }	
