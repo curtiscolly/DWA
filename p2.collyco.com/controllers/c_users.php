@@ -127,24 +127,9 @@ class users_controller extends base_controller {
 		# Delete their token cookie - effectively logging them out
 		setcookie("token", "", strtotime('-1 year'), '/');
 
-		# Send them back to the main landing page
-		#Router::redirect("/");
-		# Set up view
-			$this->template->content = View::instance('v_users_logout');
-			$this->template->title   = "Logout";
-
-		# Load CSS / JS
-			$client_files = Array(
-					"/css/users.css",
-					"/js/users.js",
-			    );
-
-		$this->template->client_files = Utils::load_client_files($client_files); 
-
-		# Render the template
-		echo $this->template;
-
-
+		# Send them back to the main landing page (a hack to delete the cookie)
+		Router::redirect("/");
+		
 	}
 
 	public function profile($user_name = NULL) {

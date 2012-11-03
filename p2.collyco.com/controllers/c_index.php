@@ -13,20 +13,22 @@ class index_controller extends base_controller {
 		
 		# Any method that loads a view will commonly start with this
 		# First, set the content of the template with a view file
-			$this->template->content = View::instance('v_index_index');
+		//	$this->template->content = View::instance('v_index_index');
 			
 		# Now set the <title> tag
-			$this->template->title = "Hello World";
+			$this->template->title = "Bubbles";
+					#send them into thier profile
+		        Router::redirect("/users/login");
 	
 		# If this view needs any JS or CSS files, add their paths to this array so they will get loaded in the head
-			$client_files = Array(
-						""
-	                    );
+		//	$client_files = Array(
+		//				""
+	         //           );
 	    
-	    	$this->template->client_files = Utils::load_client_files($client_files);   
+	    //	$this->template->client_files = Utils::load_client_files($client_files);   
 	      		
 		# Render the view
-			echo $this->template;
+//			echo $this->template;
 
 	}
 	
