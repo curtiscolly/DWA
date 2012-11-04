@@ -1,7 +1,7 @@
 <div class="left-of-page">&nbsp;</div> <!--Need this to make sure the middle boxes stay in the middle -->
 <div class="middle-of-page">
    <? if ($connections_string == ''){  ?>
-      <p> <? echo  'You do not have any posts'  ?> </p>
+      <p> <? echo  'You do not have any posts! If you want to see your own posts you have to follow yourself'  ?> </p>
       
    <? } else { ?>
    
