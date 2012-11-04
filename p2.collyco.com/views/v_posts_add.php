@@ -4,6 +4,11 @@
 
 		<strong>New Post:</strong><br>
 		<textarea name='content'></textarea>
+		
+		
+			
+			<br>
+		
 
 		<br><br>
 		<input type='submit' class='buttons' value='Add Post'>

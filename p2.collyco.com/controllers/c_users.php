@@ -71,22 +71,22 @@ class users_controller extends base_controller {
 	
 		# if the user is logged in already, send them to the profile page
 		if( $this->user ){
-		    $email = $this->user->email;
-		    Router::redirect("/users/profile/$email");
+		       $email = $this->user->email;
+		       Router::redirect("/users/profile/$email");
 		    
 		}
 		else {
 
 			# Set up view
-				$this->template->content = View::instance('v_users_login');
-				$this->template->title   = "Login";
-				$this->template->content->error = $error;
+			$this->template->content = View::instance('v_users_login');
+			$this->template->title   = "Login";
+			$this->template->content->error = $error;
 
 			# Load CSS / JS
-				$client_files = Array(
-						"/css/users.css",
-						"/js/users.js",
-				    );
+			$client_files = Array(
+					"/css/users.css",
+					"/js/users.js",
+			    );
 
 			$this->template->client_files = Utils::load_client_files($client_files); 
 
@@ -124,8 +124,7 @@ class users_controller extends base_controller {
 			
 			$email = $_POST['email'];
 
-			#send them into thier profile
-			//Router::redirect("/users/profile/$email");
+			#send them into thier posts
 			Router::redirect("/posts");
 		}
 
