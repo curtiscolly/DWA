@@ -2,6 +2,7 @@
 
 <div class="middle-of-page">
    <h1>BUBBLES</h1>
+   <h2>Come make your bubble</h2>
 
    <div class="upper-middle">
 
