@@ -53,6 +53,17 @@ class users_controller extends base_controller {
 		$email = $_POST['email'];
 		Router::redirect("/users/profile/$email");
 		
+		# Prepare our data array to be inserted 
+		# get the user to follow themselves to that they can see their own posts
+		$data = Array(
+			"created" => Time::now(),
+			"user_id" => $this->user->user_id,
+			"user_id_followed" => $this->user->user_id
+			);
+
+		# Do the insert
+		DB::instance(DB_NAME)->insert('users_users', $data);
+		
 		#send them an email confirming that they are signed up
 		Email::send();
 
