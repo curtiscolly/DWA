@@ -47,15 +47,16 @@ class posts_controller extends base_controller {
 
 		# Remove the final comma 
 		$connections_string = substr($connections_string, 0, -1);
+		$noPostMessage = 'You do not have any followers';
+		$this->template->content->connections_string = $connections_string;
+		$this->template->content->noPostMessage = $noPostMessage;
 
 		# Connections string example: 10,7,8 (where the numbers are the user_ids of who this user is following)
 	  	if ($connections_string == ''){
-	  		 //echo 'You do not have any followers';
-	  		$noPostMessage = 'You do not have any followers';
-	  		
+	  		 
 			# Pass data to the view
 			$this->template->content->connections_string = $connections_string;
-			$this->template->content->noPostMessage = $noPostMessage;
+			
 
 			# Render view
 			echo $this->template;
@@ -187,8 +188,9 @@ class posts_controller extends base_controller {
 	public function followers($user_id){
 	
 		# Set up view
-		$this->template->content = View::instance('v_posts_index');
-		$this->template->title   = "Friend Posts";
+		$this->template->content = View::instance('v_posts_followers');
+		$this->template->title   = "Followers Posts";
+		
 		
 		# Load CSS / JS
 			$client_files = Array(
@@ -230,13 +232,29 @@ class posts_controller extends base_controller {
 			WHERE posts.user_id IN (".$connections_string.")"; # This is where we use that string of user_ids we created
 
 		# Run our query, store the results in the variable $posts
-		$posts = DB::instance(DB_NAME)->select_rows($q);
+		
+		
+		if($connections_string == ''){ // if this is true, then the user has no followers
+		       $this->template->content->connections_string = $connections_string;
+		       # Render view
+		       echo $this->template;
+		       
+		} else {
+		
+		
+			$posts = DB::instance(DB_NAME)->select_rows($q);
 
-		# Pass data to the view
-		$this->template->content->posts = $posts;
+			# Pass data to the view
+			$this->template->content->posts = $posts;
 
-		# Render view
-		echo $this->template;
+			# I have to pass these because they are expected otherwise ill get an error
+			$this->template->content->connections_string = $connections_string;
+		
+		
+			# Render view
+			echo $this->template;
+		
+		}
 		
 	}
 		

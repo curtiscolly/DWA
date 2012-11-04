@@ -59,7 +59,7 @@
 </div>
         <div class="upper-middle">
 	 <div id='menu'>
-	
+	<!-- <? echo $user->email; ?>   -->
 		<!-- Menu for users who are logged in -->
 		<? if($user): ?>
 			

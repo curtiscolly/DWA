@@ -1,7 +1,7 @@
 <div class="left-of-page">&nbsp;</div> <!--Need this to make sure the middle boxes stay in the middle -->
 <div class="middle-of-page">
    <? if ($connections_string == ''){  ?>
-      <p> <? echo  'You do not have any followers'  ?> </p>
+      <p> <? echo  'This user does not have any posts'  ?> </p>
       
    <? } else { ?>
    
@@ -9,7 +9,6 @@
 
 		<h2><?=$post['first_name']?> <?=$post['last_name']?> posted:</h2>
 		<?=$post['content']?>
-		<a href='/posts/deletepost/<?=$post['post_id']?>'> Delete Post</a>
                 <hr />
 		<br><br>
 

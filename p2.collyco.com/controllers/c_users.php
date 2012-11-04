@@ -1,7 +1,7 @@
 <?php
 
 class users_controller extends base_controller {
-
+       
 
 	public function __construct() {
 		parent::__construct();
@@ -62,27 +62,38 @@ class users_controller extends base_controller {
 
 
 	public function login($error = NULL) {
+	global $email;
 	
-	# Set up view
-		$this->template->content = View::instance('v_users_login');
-		$this->template->title   = "Login";
-		$this->template->content->error = $error;
+		# if the user is logged in already, send them to the profile page
+		if( isset( $_COOKIE['token'] ) ){
+		     
+		         
+		       echo $_COOKIE['email'] ;
+		    //   Router::redirect("/users/profile/$email");
+		}
+		else {
 
-	# Load CSS / JS
-		$client_files = Array(
-				"/css/users.css",
-				"/js/users.js",
-	            );
-	
-        $this->template->client_files = Utils::load_client_files($client_files); 
-        
-	# Render the template
-	echo $this->template;
-        
+			# Set up view
+				$this->template->content = View::instance('v_users_login');
+				$this->template->title   = "Login";
+				$this->template->content->error = $error;
 
-	}
+			# Load CSS / JS
+				$client_files = Array(
+						"/css/users.css",
+						"/js/users.js",
+				    );
 
+			$this->template->client_files = Utils::load_client_files($client_files); 
+
+			# Render the template
+			echo $this->template;
+		}
+		
+          }
+          
 	public function p_login() {
+	       
 
 		$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 
@@ -94,19 +105,23 @@ class users_controller extends base_controller {
 
 		$token = DB::instance(DB_NAME)->select_field($q);
 		
-		
+
 		# Login failed
 		if($token == "") {
 			Router::redirect("/users/login/error"); # Note the addition of the parameter "error"
+
 		}
-			
+
 		# Login passed
-		else {
+		else { 
 			setcookie("token", $token, strtotime('+2 weeks'), '/');
-                        $email = $_POST['email'];
-                        
+			# I am going to make the email function global so that  I can reference 
+			# from the login function 
+			
+			$email = $_POST['email'];
+
 			#send them into thier profile
-		        Router::redirect("/users/profile/$email");
+			Router::redirect("/users/profile/$email");
 		}
 
 	}
@@ -173,13 +188,5 @@ class users_controller extends base_controller {
 	}
 	
 	
-	# This function will allow a user to view the profile of someone that they are following
-	public function friend($friendName = NULL) {
-	// put if else statements here to check if the user is followed
-	
-	//echo $friendName;
-	Router::redirect("/users/posts/$friendName");
-	
-	}
 
 }	
