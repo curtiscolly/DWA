@@ -58,9 +58,12 @@
    	
    	<input type='submit' class='buttons' value='Sign Up'>
     </form> 
-
-
    </div>
-
+   
+   <div class="lower-middle">
+   	<p>Implemented with a simplified Kohana framework, Bubbles animated with JavaScript</p>
+   	<p>Application coded in PHP</p>
+        <p>Made with love, sweat and tears by Curtis Colly</p>
+   </div>
 </div>
 		
