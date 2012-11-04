@@ -60,16 +60,20 @@ class users_controller extends base_controller {
 
 	}
 
+	public function view_cookies() {
+		echo Debug::dump($this->user, "coooooooookies");
+		echo $this->user->email; 
+	}
+
 
 	public function login($error = NULL) {
-	global $email;
+	
 	
 		# if the user is logged in already, send them to the profile page
-		if( isset( $_COOKIE['token'] ) ){
-		     
-		         
-		       echo $_COOKIE['email'] ;
-		    //   Router::redirect("/users/profile/$email");
+		if( $this->user ){
+		    $email = $this->user->email;
+		    Router::redirect("/users/profile/$email");
+		    
 		}
 		else {
 
@@ -121,7 +125,8 @@ class users_controller extends base_controller {
 			$email = $_POST['email'];
 
 			#send them into thier profile
-			Router::redirect("/users/profile/$email");
+			//Router::redirect("/users/profile/$email");
+			Router::redirect("/posts");
 		}
 
 	}

@@ -89,6 +89,13 @@ class posts_controller extends base_controller {
 		# Setup view
 		$this->template->content = View::instance('v_posts_add');
 		$this->template->title   = "Add a new post";
+		
+		$client_files = Array(
+				"/css/users.css",
+				"/js/users.js",
+		);
+		
+		$this->template->client_files = Utils::load_client_files($client_files); 
 			
 		# Render template
 		echo $this->template;
@@ -118,6 +125,14 @@ class posts_controller extends base_controller {
 		# Set up the view
 		$this->template->content = View::instance("v_posts_users");
 		$this->template->title   = "Users";
+
+		$client_files = Array(
+				"/css/users.css",
+				"/js/users.js",
+		    );
+
+		$this->template->client_files = Utils::load_client_files($client_files); 
+
 
 		# Build our query to get all the users
 		$q = "SELECT *
