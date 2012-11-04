@@ -4,7 +4,6 @@
 <h1>This is the profile of <?=$user->first_name?></h1>
 
 <!--Put the posts here -->
-<p><? echo $_COOKIE['token']; ?></p>
 
 
 <!--End the posts code -->

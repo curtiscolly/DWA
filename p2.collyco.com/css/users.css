@@ -43,7 +43,7 @@
 
 
 .square-1 {
-	background: red;
+	background: #FCC2C6;
 	color: #fff;
 	height: 23px;
 	left: 10px;
@@ -56,7 +56,7 @@
 }
 
 .square-2 {
-	background: blue;
+	background: #B1D8F9;
 	color: #fff;
 	height: 25px;
 	left: 20px;
@@ -68,7 +68,7 @@
 }
 
 .square-3 {
-	background: green;
+	background: #B0F4C1;
 	color: #fff;
 	height: 50px;
 	left: 0px;
@@ -80,7 +80,7 @@
 }
 
 .square-4 {
-	background: yellow;
+	background: #D9F49F;
 	color: #fff;
 	height: 30px;
 	left: 0px;

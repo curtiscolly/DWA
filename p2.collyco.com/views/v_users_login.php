@@ -64,18 +64,3 @@
 
 </div>
 		
-<div class="right-of-page">
-   <p></p>
-   <div class="square-1">
-      <span></span>
-   </div>
-   <div class="square-2">
-      <span></span>
-   </div>
-   <div class="square-3">
-      <span></span>
-   </div>
-   <div class="square-4">
-      <span></span>
-   </div>
-</div>
