@@ -54,10 +54,6 @@ class posts_controller extends base_controller {
 		# Connections string example: 10,7,8 (where the numbers are the user_ids of who this user is following)
 	  	if ($connections_string == ''){
 	  		 
-			# Pass data to the view
-			$this->template->content->connections_string = $connections_string;
-			
-
 			# Render view
 			echo $this->template;
 	  		 

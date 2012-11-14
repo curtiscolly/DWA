@@ -89,25 +89,6 @@ http://www.youtube.com/user/finalcutking?feature=results_main
 
 
 
-
-
-
-//list step by step event planning 
-//make the borders white
-//Maybe needs a little bit of a motto
-//Facebook, Twitter LinkedIn
-//Input the social networking bar
-
-Add the home button
-Add an about us
-add the checkout button like on giving something
-
-
-Sign into Eventfish
-create your event
-Enjoy your event
-
-
 bottom bar split into 3 
 put home about us 
 
@@ -159,10 +140,6 @@ The accessories
 
 3 to 4000 users
 
-Social Media 
-Actually pitching to 100k
-Harvard Entrpreneural pitch sessions
-
 
 After updating the core remember to update the time library
 
@@ -176,9 +153,6 @@ example one user having many posts
 The user_id is the foreign key, the key that connects
 one table to another
 posts
-
-rename collycoc_posts to posts
-
 
 Ask about the way to reroute to www
 RewriteEngine On
@@ -214,19 +188,6 @@ CRUD operations CREATE READ UPDATE DELETE
 
 -> is how you call upon a method in PHP
 
-Why is the $this->user blank stuff not working
-remember to go back and use the sanitize method
-
-
-remember to use add the posts and the users_users table to my database online
-
-
-blue states (DEM) 237
-
-Red states (REP) 191
-
-and swing states 110
-
 
 There is an error when a person is not following anyone.
 I might want to fix that
@@ -247,14 +208,6 @@ send the postnump relationship
 Create a database with amazon id numbers and products
 
 
-
-forgot my password feature
-
-create my special password generator
-
-maybe try a delete this post method
-
-Don't allow users already logged in to go to the login page
 change it so that when a user is followed or unfollowed, we'll 
 send them a message
 
@@ -273,9 +226,6 @@ console.log can be used to echo out variables
 document.getElementById('lucy').style.backgroundColor = "yellow";
 
 
-click to go back
-click on a user's name to view their post
-
 2 features 
 showing a user's profile one you click on them
 
@@ -284,8 +234,25 @@ Write p3 porposal
 https://izze.asmallorange.com:2083/
 click on a user to see their posts
 
+Every 5 seconds (flash) the page changes to a testimonial
+like on handybook
+4 or 5 pictures that flash across the screen
+or stats 
 
-http://localhost/posts/users/
+load the content and the javascript last
 
-List the profile of the person's that you are viewing
+
+Pursu1t
+oh yeah baby this is a cool keyboard
+
+
+Helpers are simply functions that assist you with development
+
+We can make it so that you have to use your facebook info to log in
+
+Song Affirmative Action NAS
+Spit your game biggy ft twista
+2pac no more pain
+
+As the rush comes (Gabriel & Dresden Chill Out Mix)
 

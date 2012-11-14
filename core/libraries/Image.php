@@ -16,8 +16,8 @@ class Image {
    	# Class variables
    	private $image;
    	private $file_name;
-    private $width;
-    private $height;
+        private $width;
+        private $height;
 	private $image_resized;
 
 	/*-------------------------------------------------------------------------------------------------
