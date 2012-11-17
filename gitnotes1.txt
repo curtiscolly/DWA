@@ -1,9 +1,5 @@
 push from collyco to the github servers
 
-
-test s
-test somethingomething
-
 ssh-keygen -t rsa -C "curtiscolly@yahoo.com"
 git clone git@github.com:curtiscolly/DWA.get
 
@@ -33,7 +29,7 @@ git stash pop
 
 git pull origin master
 
-
+http://jsfiddle.net/M3jph/3/
 
 
 @m@z0n@PI
@@ -243,7 +239,7 @@ load the content and the javascript last
 
 
 Pursu1t
-oh yeah baby this is a cool keyboard
+
 
 
 Helpers are simply functions that assist you with development
@@ -255,4 +251,75 @@ Spit your game biggy ft twista
 2pac no more pain
 
 As the rush comes (Gabriel & Dresden Chill Out Mix)
+
+Who is going to set up the room for the individuals that book the room
+I need to work with an event manager
+
+
+Get in contact with commercial guy
+
+
+my IP address for asmallorange 149.47.131.252
+Methods
+
+.css(what you're changing, changing to); // if you miss one of these, then it gives you output
+
+.html("foobar") <> <foobar </> used on spans and divs 
+prepend, append
+.val is used to get data from form input
+
+Listeners
+.click
+.attr is used to get attrbutes
+.attr(name of attribute)
+
+.hide
+.show
+.toggle
+.length
+.live
+
+The print method for the form generator spawns a new window
+
+
+Static HTML for the card game
+Cards 
+	JS to generate cards for me (to easily toggle)
+        A way to compage the cards 
+	for loop ... start at 0, go to how many cards 
+	Array of letters A-Z
+	Random letter from the array
+	Choose each letter twice
+	Shuffle the deck
+	Keep track of our cards... store in array
+	* Do we want only unique pairs
+
+
+Flipping cards, Two classes, one for up, one for down
+Up: Font color black
+Down: Font color yellow
+* Flip state:
+
+
+Find a match, make those two cards go away
+Points
+CSS for layout
+
+Find a match,
+Increment points
+Inject points into the scoreboard
+
+Make those two cards go away
+.css('display','none')
+.hide('slow');
+
+
+Try using OOP for the passgen program
+
+Send an email about p3
+
+
+Pay citi by citi
+
+
 
