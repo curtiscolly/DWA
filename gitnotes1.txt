@@ -32,6 +32,26 @@ git pull origin master
 http://jsfiddle.net/M3jph/3/
 
 
+
+attach a click listener to all of the items
+$('.graphic-choice').click(function() {
+var image $(this).attr('src');
+
+var full_image = "<img src='" + image + "'>";
+
+.html
+
+$('canvas').prepend
+
+
+});
+
+
+
+JQuery UI is used t omake something draggable
+need to add the JQuery UI
+
+
 @m@z0n@PI
 @m@z0n@PI
 
@@ -321,5 +341,14 @@ Send an email about p3
 
 Pay citi by citi
 
+make the last textbox uneditable
+
+password
+
+
+
+Don't say a prayer for me now, save it til the morning after cover
+
+I think it is supernova save a prayer
 
 

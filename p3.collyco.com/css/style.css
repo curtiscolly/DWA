@@ -1,0 +1,28 @@
+#lucy {
+			border:1px solid black;
+			width:100px;
+			height:100px;
+			
+}
+
+#passwordCharDiv{
+
+
+
+}
+
+
+/* Code from  http://stackoverflow.com/questions/69430/is-there-a-way-to-make-text-unselectable-on-an-html-page */
+.unselectable {   
+   -moz-user-select: -moz-none;   
+   -khtml-user-select: none;  
+   -webkit-user-select: none;  
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+

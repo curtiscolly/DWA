@@ -5,13 +5,8 @@
   <head>
     <title>JS1</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <style type="text/css">
-		#lucy {
-				border:1px solid black;
-				width:100px;
-				height:100px;
-		}
 
     </style>
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
@@ -21,18 +16,18 @@
 
   <body>
 
-  <form name="input" action="html_form_action.asp" method="get">
-  Please enter your Pre Password: <br>  <input type='text' id='prepassword'> <br>
-  <input type="submit" value="Submit">
+  <form name="input" action="file://C:/wamp/www/dwa/javscript1.html".asp" method="get">
+  Please enter your Pre Password: <br>
+  <input type='text' id='prepassword' onpaste='return false' unselectable='on' onselectstart='return false'> <br>
+  <input type="submit" value="Submit" id="submitButton">
   <br>
   Here is your password
   <br>
-  <input type="text" id="postpassword">
+  <input type="text" id="postpassword" readonly="readonly" class='unselectable'>
   <br>
 
   <br>
   </form>
-
   <script>
 
 
