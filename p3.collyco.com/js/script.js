@@ -42,9 +42,9 @@ $(document).ready(function() {
 		
 	}
 	
-	$('alphabet[0]').on('click', function() {
+	$('.postPasswordDiv').on('click', function() {
 		//processPassword();
-		console.log('something was clicked');
+		console.log(" something was clicked");
        	});
 	
 	$('#prepassword').on('keyup', function() {
