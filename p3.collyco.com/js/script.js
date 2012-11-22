@@ -14,25 +14,19 @@ $(document).ready(function() {
 	
 	function createSomeDiv(text) {
             
-            var divTag = document.createElement("div"); 
+            var divTag = document.createElement("span"); 
             divTag.id = "someDiv";
-            divTag.class = "postPasswordDiv"
+            // divTag.class = "postPasswordDiv";
             divTag.setAttribute("align", "right"); 
            
             divTag.style.margin = "0px auto"; 
-            divTag.className = "dynamicDiv"; 
+            divTag.className = "postPasswordDiv"; 
             divTag.innerHTML = text; 
             document.body.appendChild(divTag); 
             
 	}	
 	
-	
-	createSomeDiv('t');
-	createSomeDiv('e');
-	createSomeDiv('s');
-	createSomeDiv('t');
-	
-	
+
 	
 	
 	
@@ -40,6 +34,18 @@ $(document).ready(function() {
 	//document.getElementById('lucy').style.backgroundColor = "red";
 	var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' , 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 	var postString= "";  // define this outside so that the letters are not forgotten
+	
+	
+	// Loop through the array and put those letters on the screen
+	for(var i=0; i< alphabet.length; i++){
+		createSomeDiv(alphabet[i]);
+		
+	}
+	
+	$('alphabet[0]').on('click', function() {
+		//processPassword();
+		console.log('something was clicked');
+       	});
 	
 	$('#prepassword').on('keyup', function() {
 	     processPassword();

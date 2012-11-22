@@ -26,3 +26,14 @@
    user-select: none;
 }
 
+/* Change this to letter div */
+.postPasswordDiv{
+	color: red;
+	background-color: green;
+	font-size:3em;
+	border: 1px solid blue;
+	padding: 20px;
+	
+	
+
+}
