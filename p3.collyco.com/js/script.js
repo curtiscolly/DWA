@@ -27,7 +27,9 @@ $(document).ready(function() {
 	}	
 	
 
-	var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' , 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+	var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' , 'k', 'l', 'm',
+			'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+			
 	var postString= "";  // define this outside so that the letters are not forgotten
 	
 	
@@ -46,27 +48,9 @@ $(document).ready(function() {
 		
 	}
 	
-
-	$('#prepassword').on('keyup', function() {
-	     processPassword();
-        });
-	 
-	 
-	 
-	 var postString;
 	 function processPassword(lastCharacter) {
 
-	 	/* $('#prepassword').on('keydown', function() {
-	 	       console.log("inside of the hide function");
-	 	       $('div').remove('#letterChangeDiv');
-	 	 }); */
-	 	
-	 	 
-		  lastCharacter
-		// var lastCharacter = preString.charAt( preString.length-1 ).toLowerCase();
-		 
-		
-		 
+
 		 switch(lastCharacter){ 
 
 			case 'a': 
@@ -74,25 +58,19 @@ $(document).ready(function() {
 			  createDiv("Your letter a was changed to the @ symbol", "letterChangeDiv");
 			  break;
 			  
-			case 's':
-			  lastCharacter = '$';
-			  createDiv("Your s was changed to the $ sign", "letterChangeDiv");
+			case 'e':
+			  lastCharacter = '3';
+			  createDiv("Your E was changed to the number three", "letterChangeDiv");
 			  break;
 			  
+			case 'g':
+			  lastCharacter = '6';
+			  createDiv("Your g was changed to the number 6", "letterChangeDiv");
+			  break;
 			  
 			case 'h':
 			  lastCharacter = '#';
 			  createDiv("Your h was changed to the # sign", "letterChangeDiv");
-			  break;
-			  
-			case 'o':
-			  lastCharacter = '0';
-			  createDiv("Your o was changed to the number zero", "letterChangeDiv");
-			  break;
-			  
-			case 'x':
-			  lastCharacter = '%';
-			  createDiv("Your x was changed to the % symbol", "letterChangeDiv");
 			  break;
 			  
 			case 'i':
@@ -105,16 +83,35 @@ $(document).ready(function() {
 			  createDiv("Your L was changed to the number one", "letterChangeDiv");
 			  break;
 			  
-			case 'e':
-			  lastCharacter = '3';
-			  createDiv("Your E was changed to the number three", "letterChangeDiv");
+			case 'o':
+			  lastCharacter = '0';
+			  createDiv("Your o was changed to the number zero", "letterChangeDiv");
+			  break;
+			  
+			case 'q':
+			  lastCharacter = '9';
+			  createDiv("Your q was changed to the number 9", "letterChangeDiv");
+			  break;
+			    
+			case 's':
+			  lastCharacter = '$';
+			  createDiv("Your s was changed to the $ sign", "letterChangeDiv");
 			  break;
 			  
 			case 't':
 			  lastCharacter = '+';
 			  createDiv("Your T was changed to the symbol +", "letterChangeDiv");
 			  break;
+			   
+			case 'x':
+			  lastCharacter = '%';
+			  createDiv("Your x was changed to the % symbol", "letterChangeDiv");
+			  break;
 			  
+			case 'z':
+			  lastCharacter = '2';
+			  createDiv("Your z was changed to the symbol 2", "letterChangeDiv");
+			  break;		  
 			  
 			default:
 			  if(postString.length == 0){ //capitalize the first character
