@@ -18,9 +18,7 @@ $(document).ready(function() {
             
             var divTag = document.createElement("span"); 
             divTag.id = text;
-            // divTag.class = "postPasswordDiv";
             divTag.setAttribute("align", "right"); 
-           
             divTag.style.margin = "0px auto"; 
             divTag.className = "postPasswordDiv"; 
             divTag.innerHTML = text; 
@@ -29,11 +27,6 @@ $(document).ready(function() {
 	}	
 	
 
-	
-	
-	
-
-	//document.getElementById('lucy').style.backgroundColor = "red";
 	var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' , 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 	var postString= "";  // define this outside so that the letters are not forgotten
 	
@@ -60,6 +53,7 @@ $(document).ready(function() {
 	 
 	 
 	 
+	 var postString;
 	 function processPassword(lastCharacter) {
 
 	 	/* $('#prepassword').on('keydown', function() {
@@ -68,10 +62,11 @@ $(document).ready(function() {
 	 	 }); */
 	 	
 	 	 
-		   var preString = $('#prepassword').val().toLowerCase();
+		  lastCharacter
 		// var lastCharacter = preString.charAt( preString.length-1 ).toLowerCase();
-		// console.log("lastCharacter= " + lastCharacter); 
-		 		 		 
+		 
+		
+		 
 		 switch(lastCharacter){ 
 
 			case 'a': 
@@ -115,31 +110,37 @@ $(document).ready(function() {
 			  createDiv("Your E was changed to the number three", "letterChangeDiv");
 			  break;
 			  
+			case 't':
+			  lastCharacter = '+';
+			  createDiv("Your T was changed to the symbol +", "letterChangeDiv");
+			  break;
+			  
 			  
 			default:
-			//  lastCharacter = preString.charAt( preString.length-1 );            // if none of these cases are true
-			  if(preString.length == 1){ //capitalize the first character	     // then do not change the last character 
-			  	lastCharacter = preString.charAt(0).toUpperCase();
+			  if(postString.length == 0){ //capitalize the first character
+			  	lastCharacter = lastCharacter.toUpperCase();
 			  	createDiv("Your first letter was capitalized", "letterChangeDiv");
-			  	
-			  }							    
-			  
-		}	  	                                                   
-
+				
+			  }
+		
+		} // end switch
 		postString+=lastCharacter;
 		
-		// Check to make sure that the 
-		// user did not delete characters
-		//if(preString.length < postString.length ){
-		//   postString = postString.substring(0, postString.length-2);
-		   
-		//}
-		
-		// put the new password in the bottom textbox
+		// put the new password in the textbox
 		$('#postpassword').val(  postString  );
+		// console.log(postString);
+		}	  	                                                   
+
+		
+		
+		
+
 		
          
-         }
+         
+    $('#m').after("<br /><br /><br /><br /><br />");
+    $('#z').after("<br /><br />");
+   
          
 
 }); // end of doc ready

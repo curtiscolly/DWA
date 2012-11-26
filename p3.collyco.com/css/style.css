@@ -28,8 +28,8 @@
 
 /* Change this to letter div */
 .postPasswordDiv{
-	color: red;
-	background-color: green;
+	color: #049EF7;
+	background-color:#FCB000 ;
 	font-size:3em;
 	border: 1px solid blue;
 	padding: 20px;
@@ -37,3 +37,30 @@
 	
 
 }
+
+p{
+color: #FCB000;
+font-size: 2em;
+
+}
+
+.letterChangeDiv{
+color: #FCB000;
+font-size: 2em;
+
+
+}
+
+
+body {background-color:#049EF7;}
+
+.postpassword{ 
+  margin-left: auto;
+  margin-right: auto;
+  
+ }
+ 
+ .explanation{
+ font-size: 1.3em;
+ color: black;
+ }
