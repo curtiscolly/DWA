@@ -12,10 +12,12 @@ $(document).ready(function() {
             
 	}
 	
+	
+	
 	function createSomeDiv(text) {
             
             var divTag = document.createElement("span"); 
-            divTag.id = "someDiv";
+            divTag.id = text;
             // divTag.class = "postPasswordDiv";
             divTag.setAttribute("align", "right"); 
            
@@ -38,32 +40,37 @@ $(document).ready(function() {
 	
 	// Loop through the array and put those letters on the screen
 	for(var i=0; i< alphabet.length; i++){
+		var letterId = '#' + alphabet[i];
 		createSomeDiv(alphabet[i]);
+		
+		
+		$(letterId).on('click', function() {
+			//console.log( this.id + " was clicked");
+			processPassword(this.id);
+		
+		});
+		
 		
 	}
 	
-	$('.postPasswordDiv').on('click', function() {
-		//processPassword();
-		console.log(" something was clicked");
-       	});
-	
+
 	$('#prepassword').on('keyup', function() {
 	     processPassword();
         });
 	 
 	 
 	 
-	 function processPassword() {
+	 function processPassword(lastCharacter) {
 
-	 	 $('#prepassword').on('keydown', function() {
+	 	/* $('#prepassword').on('keydown', function() {
 	 	       console.log("inside of the hide function");
 	 	       $('div').remove('#letterChangeDiv');
-	 	 });
+	 	 }); */
 	 	
 	 	 
-		 var preString = $('#prepassword').val().toLowerCase();
-		 var lastCharacter = preString.charAt( preString.length-1 ).toLowerCase();
-		 console.log("lastCharacter= " + lastCharacter); 
+		   var preString = $('#prepassword').val().toLowerCase();
+		// var lastCharacter = preString.charAt( preString.length-1 ).toLowerCase();
+		// console.log("lastCharacter= " + lastCharacter); 
 		 		 		 
 		 switch(lastCharacter){ 
 
@@ -110,7 +117,7 @@ $(document).ready(function() {
 			  
 			  
 			default:
-			  lastCharacter = preString.charAt( preString.length-1 );            // if none of these cases are true
+			//  lastCharacter = preString.charAt( preString.length-1 );            // if none of these cases are true
 			  if(preString.length == 1){ //capitalize the first character	     // then do not change the last character 
 			  	lastCharacter = preString.charAt(0).toUpperCase();
 			  	createDiv("Your first letter was capitalized", "letterChangeDiv");
@@ -123,10 +130,10 @@ $(document).ready(function() {
 		
 		// Check to make sure that the 
 		// user did not delete characters
-		if(preString.length < postString.length ){
-		   postString = postString.substring(0, postString.length-2);
+		//if(preString.length < postString.length ){
+		//   postString = postString.substring(0, postString.length-2);
 		   
-		}
+		//}
 		
 		// put the new password in the bottom textbox
 		$('#postpassword').val(  postString  );
