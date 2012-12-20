@@ -38,7 +38,7 @@ class users_controller extends base_controller {
 	public function p_signup() {
 
 		# What data was submitted
-		#print_r($_POST);
+		print_r($_POST);
 
 		$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 		$_POST['created']  = Time::now(); # This returns the current timestamp
@@ -51,21 +51,23 @@ class users_controller extends base_controller {
 		
 		#reroute them to their profile page
 		$email = $_POST['email'];
-		Router::redirect("/users/profile/$email");
+	 
+		//Router::redirect("/users/profile/$email");
+		
 		
 		# Prepare our data array to be inserted 
 		# get the user to follow themselves to that they can see their own posts
 		$data = Array(
-			"created" => Time::now(),
-			"user_id" => $this->user->user_id,
-			"user_id_followed" => $this->user->user_id
+		//	"created" => Time::now(),
+		//	"user_id" => $this->user->user_id,
+		//	"user_id_followed" => $this->user->user_id
 			);
 
 		# Do the insert
-		DB::instance(DB_NAME)->insert('users_users', $data);
+		//DB::instance(DB_NAME)->insert('users_users', $data);
 		
 		#send them an email confirming that they are signed up
-		Email::send();
+		//Email::send();
 
 		
 
@@ -136,7 +138,7 @@ class users_controller extends base_controller {
 			$email = $_POST['email'];
 
 			#send them into thier posts
-			Router::redirect("/posts");
+			Router::redirect("/items/view_bags");
 		}
 
 	}
@@ -161,47 +163,6 @@ class users_controller extends base_controller {
 		Router::redirect("/");
 		
 	}
-
-	public function profile($user_name = NULL) {
-
-		# If user is blank, they're not logged in, show message and don't do anything else
-		if(!$this->user) {
-			echo "Members only. <a href='/users/login'>Login</a>";
-
-			# Return will force this method to exit here so the rest of 
-			# the code won't be executed and the profile view won't be displayed.
-			return false;
-		}
-
-			#echo $this->user->first_name;		
-
-        
-		 if($user_name == NULL) {
-		 	echo "You did not specify a user";
-		 } 
-		
-		 else {
-
-			# Setup the view
-				$this->template->content = View::instance("v_users_profile");
-				$this->template->title   = "Profile for ".$user_name;
-
-		        # Set up client files
-				$client_files = Array(
-					"/css/users.css", "/js/users.js"
-					);
-				$this->template->client_files = Utils::load_client_files($client_files);
-
-			 # Pass variables to the view
-				$this->template->content->user_name = $user_name;
-
-			 #  Render the view
-	 			echo $this->template;
-	
-	   
-		}	
-	}
-	
 	
 
 }	

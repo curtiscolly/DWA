@@ -47,6 +47,16 @@ $('canvas').prepend
 });
 
 
+quintly for competetive analysis
+SocialClicks for getting users
+http://www.adotomi.com/ for the same thing as above
+ampush
+
+
+Harley Davidson Mosaic
+
+
+
 
 JQuery UI is used t omake something draggable
 need to add the JQuery UI
@@ -245,7 +255,6 @@ document.getElementById('lucy').style.backgroundColor = "yellow";
 2 features 
 showing a user's profile one you click on them
 
-Write p3 porposal
 
 https://izze.asmallorange.com:2083/
 click on a user to see their posts
@@ -364,3 +373,107 @@ eventfish@gmail.com
 
 Jon from legal zoom extension
 7396
+
+
+When just text shows up instead of generated code, you might have
+forgotten the php tags
+
+Dj
+band
+magician 
+clown
+public speaker
+celebrity
+
+Gimp
+
+
+I recreated the halloween item numbers in the DB
+
+put price in the db
+set up email template later in the base controller
+and in the user.php class
+
+call to a member function on a nun 
+
+
+Songs
+The High Road - broken bells
+
+
+How do I set a global variable in Kohana?
+
+It's good to use AJAX to see if a username is available.
+
+Stop using PHP closing tags unless I have to
+
+Use ajax to show that div with the error message about the 
+user password
+
+JSON is a conveinent way to pass data back and fourth
+
+the login controller is for success or failed logins and p_login is for setting cookies
+
+
+email
+username
+password
+logins
+last_login
+first_name
+last_name
+id
+
+When you authenticate a user, you return their username.
+It is set to global in the base controller
+
+Authenticate looks for a token cookie
+
+Go to the venture cafe from 6-8 for a presentation on Why business plans are dead
+
+
+
+
+Log in with linked in
+ph1212 is the event code for the cambridge network in the microsoft building
+
+
+prismatic
+Get a backup system
+
+<?php phpinfo(); ?>
+
+get id was get['id'] was concatenated with the sql Query
+
+cars are not secured at the top
+
+Validate Input escape output
+Try to aviod saving customers payment info for as long as possible
+
+xdebug
+rubber duck debugging
+chmod 0777
+
+12 php framework
+
+Ruby on Rails is a framework
+
+"We are what we repeatedly do;
+Excellence, then is not an act but a habit" -Aristotle
+
+Great hosting & services
+
+spend money on Outsourcing (like accounting)
+500ppl 30 dollars per month = $180,000 pr/yr
+
+Communicate
+Give more
+Think about the future (
+
+
+Download the memcache extension for PHP
+
+Make friendly urls with yii
+db info 
+
+localhost username root password blank

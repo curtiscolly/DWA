@@ -92,6 +92,7 @@ class posts_controller extends base_controller {
 		);
 		
 		$this->template->client_files = Utils::load_client_files($client_files); 
+		
 			
 		# Render template
 		echo $this->template;
@@ -272,6 +273,14 @@ class posts_controller extends base_controller {
 		
 		}
 		
+	}
+	
+	public function control_panel() {
+	   # Setup view
+	   
+	
+	
+	
 	}
 		
 

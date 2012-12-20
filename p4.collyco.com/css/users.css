@@ -1,0 +1,51 @@
+#topBar{
+   height: 30px;
+   background-color: blue;
+   padding: 15px;
+   float:center;
+   margin-bottom: 10em;
+   
+   
+   
+}
+
+#topButtons{
+    float:right;
+    
+
+}
+
+body{
+   margin: 0;
+   background-color: black;
+   color:white;
+   
+}
+
+#left{
+  margin-top: 3.1em;
+  float: left;
+  clear: right;
+  width: 25%;
+  clear:both;
+  
+
+    
+}
+
+#right{
+   margin-top: 3.1em;
+   float:right;
+   width: 25%;
+  
+}
+
+.images{
+     height: 250px;
+     width:  250px;
+     margin-bottom:0;
+     margin-top: 0;   
+}
+
+
+

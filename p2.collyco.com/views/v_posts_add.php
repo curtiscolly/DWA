@@ -14,4 +14,17 @@
 		<input type='submit' class='buttons' value='Add Post'>
 
 	</form>
+    <script type='text/javascript'>
+	
+	var options = {
+	
+	
+	},
+	success: function(){
+	
+	
+	}
+	
+
+    </script>
 </div>
