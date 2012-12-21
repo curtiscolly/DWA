@@ -1,3 +1,7 @@
+<h1>Here are your bags</h1>
+<p>Click to view contents</p>
+
+
 <?
 	   
 	   foreach($bags as $bag){

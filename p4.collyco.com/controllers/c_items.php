@@ -1,20 +1,29 @@
 <?php
+	
+       
+
 
 class items_controller extends base_controller {
+		
+	
 
 	public function __construct() {
 		parent::__construct();
+		global $bag_group_id;
+		
 		
 		# Make sure user is logged in if they want to use anything in this controller
 		if(!$this->user) {
 			die("Members only. <a href='/users/login'>Login</a>");
+			$this->$bag_group_id = 0;
+			
 		}
 		
 	}
 
 	public function index() {
 
-		# Set up view
+	/*	# Set up view
 		$this->template->content = View::instance('v_item_list');
 		$this->template->title   = "Items";
 		# Load CSS / JS
@@ -41,7 +50,10 @@ class items_controller extends base_controller {
 
             # Render view
 	      echo $this->template;
-         
+                                        */
+                                        
+            # Send them back
+	    Router::redirect("items/view_bags/");
          
 	}
 	
@@ -51,6 +63,7 @@ class items_controller extends base_controller {
 	 * Otherwise it will simply add one to the number of items for that user
 	 */
 	public function add_item($item_id = 'no item selected') {
+	   
 	 
 	   /*
 	    * If the item is not in the database,
@@ -74,11 +87,14 @@ class items_controller extends base_controller {
 			"item_id" => $item_id,
 			"created" => Time::now(),
 			"user_id" => $this->user->user_id,
-			"bag_group_id" => 2600
+			"bag_group_id" => $bag_group_id
 		);
 		
 		# Do the insert
 		DB::instance(DB_NAME)->insert('bags', $data);
+		
+		# Send them back
+		Router::redirect("/items/index");
 		
 	    	
 	    // If the user already has at least one of the item
@@ -89,6 +105,9 @@ class items_controller extends base_controller {
 	         $where_clause = 'WHERE bag_id = '.$the_item['bag_id'];         
 	         $data = Array("number_of_items" => $plus_one_item );
 	         DB::instance(DB_NAME)->update('bags', $data, $where_clause);
+	         
+		# Send them back
+		Router::redirect("/items/index");
 	      
 	    }
 	  	   
@@ -112,13 +131,7 @@ class items_controller extends base_controller {
 		         AND item_id=".$item_id_quotes;
 		  
 	           $the_item = DB::instance(DB_NAME)->select_row($q);
-		   foreach($the_item as $item){
-		   	echo ' ';
-		   	echo $item;
-		   	echo ' ';
-		   }
-		   
-		  
+	           
 		   if(empty($the_item)){
 		        // no items
 		        return false;
@@ -155,7 +168,7 @@ class items_controller extends base_controller {
 	        $number_of_items = 1;
 
 	        
-		$this->template->content = View::instance("v_show_items_in_bag");
+		$this->template->content = View::instance("v_items_show_in_bag");
 		$this->template->title   = "Items in this bag";
 
 		$client_files = Array(
@@ -174,6 +187,7 @@ class items_controller extends base_controller {
 	
 			
 	}
+	
 	/*
 	 * For each bag group put a bag on the screen
 	 * and assign a bag_group_id to to the img
@@ -188,7 +202,7 @@ class items_controller extends base_controller {
 		 
 	   $bags = DB::instance(DB_NAME)->select_rows($q);
 
-	   $this->template->content = View::instance("v_bags");
+	   $this->template->content = View::instance("v_items_bags");
 	   $this->template->title   = "Your bags";
 
 	   $client_files = Array(
@@ -215,7 +229,7 @@ class items_controller extends base_controller {
 	public function send_to_cart(){
 	
 	  
-	   $this->template->content = View::instance("v_send_to_cart");
+	   $this->template->content = View::instance("v_items_send_to_cart");
 	   $this->template->title   = "Sending to Cart";
 
 	   $client_files = Array(
@@ -241,7 +255,7 @@ class items_controller extends base_controller {
 	*/
 	public function teams(){
 		# Set up the view
-		$this->template->content = View::instance("v_teams");
+		$this->template->content = View::instance("v_items_teams");
 		$this->template->title   = "Users";
 
 		$client_files = Array(
@@ -255,6 +269,88 @@ class items_controller extends base_controller {
 		echo $this->template;	
 	
 	}
+	
+	/**
+	 * Saves the current items for a user 
+	 * in a bag and creates a new one for 
+	 * them
+	 */
+	public function save_bag(){
+	       $bag_group_id++;
+	       Router::redirect("/items/teams"); 
+	       
+	}
+	
+	
+	/*
+	 * View a list of patriots items
+	 */
+	public function patriots_items(){
+	
+		$this->template->content = View::instance("v_items_patriots");
+		$this->template->title   = "Patriots Gear";
 
+		$client_files = Array(
+				"/css/users.css",
+				"/js/users.js",
+		    );
+
+		$this->template->client_files = Utils::load_client_files($client_files); 
+		
+		# Build a query of the users this user is following - we're only interested in their posts
+		$q = "SELECT * 
+		      FROM items
+		      WHERE team = 
+		      'patriots'
+		      ";
+			
+
+		# Store our results (an array) in the variable $items
+		$items = DB::instance(DB_NAME)->select_array($q, 'item_id');
+		
+		# Pass the item data to the view
+		$this->template->content->items = $items;
+
+		# Render the view
+		echo $this->template;		
+	
+	}
+	
+	
+	public function celtics_items(){
+	
+		$this->template->content = View::instance("v_items_patriots");
+		$this->template->title   = "Celtics Gear";
+
+		$client_files = Array(
+				"/css/users.css",
+				"/js/users.js",
+		    );
+
+		$this->template->client_files = Utils::load_client_files($client_files); 
+		
+		# Build a query of 
+		$q = "SELECT * 
+			FROM items
+		        WHERE team = 
+		       'celtics'
+		      ";
+			
+			
+			
+
+		# Store our results (an array) in the variable $items
+		$items = DB::instance(DB_NAME)->select_array($q, 'item_id');
+		
+		# Pass the item data to the view
+		$this->template->content->items = $items;
+
+		# Render the view
+		echo $this->template;		
+	
+	
+		
+	//
+	}
 	
 }

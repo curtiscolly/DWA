@@ -4,7 +4,7 @@
    <h2>Get gear from your favorite team</h2>
 
    
-
+   <div class='middle'>
         <form method='POST' action='/users/p_login'>
             Email<br>
 	    <input type='text' name='email'>	
@@ -27,7 +27,7 @@
    
    
    <h1>OR</h1>
-   <div class="lower-middle">
+   
    
     <form method='POST' action='/users/p_signup'>
    
@@ -56,13 +56,11 @@
 
    	
    	<input type='submit' class='buttons' value='Sign Up'>
-    </form> 
+    </form>
+    
+    
    </div>
    
-   <div class="lower-middle">
-   	<p>Implemented with a simplified Kohana framework, Bubbles animated with JavaScript</p>
-   	<p>Application coded in PHP</p>
-        <p>Made with love, sweat and tears by Curtis Colly</p>
-   </div>
-</div>
+ 
+
 		

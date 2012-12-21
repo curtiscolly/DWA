@@ -1,8 +1,5 @@
-
 <? 
-//var_dump($items);
-'<br>';
- // the array is empty
+
   if(empty($items)){
    echo 'There are NO items here';
   
@@ -30,12 +27,12 @@
   
         echo
         '<FORM METHOD="LINK" ACTION='.$add_item_link.'>
-	 <INPUT TYPE="submit" VALUE="Increase">
+	 <INPUT TYPE="submit" VALUE="Add one of these to your bag" onclick="item_add_alert()">
 	 </FORM>';
 	 
         echo
         '<FORM METHOD="LINK" ACTION='.$remove_item_link.'>
-	 <INPUT TYPE="submit" VALUE="Decrease">
+	 <INPUT TYPE="submit" VALUE="Remove one of these from your bag">
 	 </FORM>';
 	 
        

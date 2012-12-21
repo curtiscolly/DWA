@@ -1,4 +1,4 @@
-// from:  http://www.htmlcodetutorial.com/linking/linking_famsupp_73.html
+//<!-- from:  http://www.htmlcodetutorial.com/linking/linking_famsupp_73.html -->
 
 <SCRIPT TYPE="text/javascript">
 <!--
@@ -9,5 +9,13 @@ window.open('', windowname, 'height=200,width=400,scrollbars=yes');
 myform.target=windowname;
 return true;
 }
-//-->
+
+
+
+function item_add_alert()
+  {
+  alert("One item added");
+  }
+  
+ //--> 
 </SCRIPT>
