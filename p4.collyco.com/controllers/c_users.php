@@ -49,7 +49,7 @@ class users_controller extends base_controller {
 		DB::instance(DB_NAME)->insert('users', $_POST);
 
 		#send them into thier posts
-		Router::redirect("/items/view_bags");
+		Router::redirect("/items/items_teams");
 		
 		
 	 

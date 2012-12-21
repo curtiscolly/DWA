@@ -287,7 +287,7 @@ class items_controller extends base_controller {
 	 */
 	public function patriots_items(){
 	
-		$this->template->content = View::instance("v_items_patriots");
+		$this->template->content = View::instance("v_items_for_team");
 		$this->template->title   = "Patriots Gear";
 
 		$client_files = Array(
@@ -319,7 +319,7 @@ class items_controller extends base_controller {
 	
 	public function celtics_items(){
 	
-		$this->template->content = View::instance("v_items_patriots");
+		$this->template->content = View::instance("v_items_for_team");
 		$this->template->title   = "Celtics Gear";
 
 		$client_files = Array(
@@ -336,9 +336,6 @@ class items_controller extends base_controller {
 		       'celtics'
 		      ";
 			
-			
-			
-
 		# Store our results (an array) in the variable $items
 		$items = DB::instance(DB_NAME)->select_array($q, 'item_id');
 		
@@ -348,9 +345,66 @@ class items_controller extends base_controller {
 		# Render the view
 		echo $this->template;		
 	
+	}
 	
+	public function red_sox_items(){
+	
+		$this->template->content = View::instance("v_items_for_team");
+		$this->template->title   = "Red Sox Gear";
+
+		$client_files = Array(
+				"/css/users.css",
+				"/js/users.js",
+		    );
+
+		$this->template->client_files = Utils::load_client_files($client_files); 
 		
-	//
+		# Build a query of 
+		$q = "SELECT * 
+			FROM items
+		        WHERE team = 
+		       'redsox'
+		      ";
+			
+		# Store our results (an array) in the variable $items
+		$items = DB::instance(DB_NAME)->select_array($q, 'item_id');
+		
+		# Pass the item data to the view
+		$this->template->content->items = $items;
+
+		# Render the view
+		echo $this->template;		
+	
+	}
+	
+	public function bruins_items(){
+	
+		$this->template->content = View::instance("v_items_for_team");
+		$this->template->title   = "Bruins Gear";
+
+		$client_files = Array(
+				"/css/users.css",
+				"/js/users.js",
+		    );
+
+		$this->template->client_files = Utils::load_client_files($client_files); 
+		
+		# Build a query of 
+		$q = "SELECT * 
+			FROM items
+		        WHERE team = 
+		       'bruins'
+		      ";
+			
+		# Store our results (an array) in the variable $items
+		$items = DB::instance(DB_NAME)->select_array($q, 'item_id');
+		
+		# Pass the item data to the view
+		$this->template->content->items = $items;
+
+		# Render the view
+		echo $this->template;		
+	
 	}
 	
 }
