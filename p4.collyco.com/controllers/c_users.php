@@ -113,7 +113,7 @@ class users_controller extends base_controller {
 			# I am going to make the email function global so that  I can reference 
 			# from the login function 
 			
-			Router::redirect("/items/view_bags");
+			Router::redirect("/items/items_teams");
 		}
 
 	}
