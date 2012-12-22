@@ -5,8 +5,6 @@
 
 class items_controller extends base_controller {
 		
-	
-
 	public function __construct() {
 		parent::__construct();
 		global $bag_group_id;
@@ -23,37 +21,8 @@ class items_controller extends base_controller {
 
 	public function index() {
 
-	/*	# Set up view
-		$this->template->content = View::instance('v_item_list');
-		$this->template->title   = "Items";
-		# Load CSS / JS
-			$client_files = Array(
-					"/css/users.css",
-					"/js/users.js",
-			    );
-
-		$this->template->client_files = Utils::load_client_files($client_files); 
-
-
-		# Build a query of the users this user is following - we're only interested in their posts
-		$q = "SELECT * 
-			FROM items";
-			
-
-		# Store our results (an array) in the variable $items
-		$items = DB::instance(DB_NAME)->select_array($q, 'item_id');
-		
-		# Pass the item data to the view
-		$this->template->content->items = $items;
-		
-		
-
-            # Render view
-	      echo $this->template;
-                                        */
-                                        
             # Send them back
-	    Router::redirect("items/view_bags/");
+	    Router::redirect("items/teams/");
          
 	}
 	
@@ -94,7 +63,7 @@ class items_controller extends base_controller {
 		DB::instance(DB_NAME)->insert('bags', $data);
 		
 		# Send them back
-		Router::redirect("/items/index");
+		Router::redirect("/items/teams");
 		
 	    	
 	    // If the user already has at least one of the item
@@ -107,7 +76,7 @@ class items_controller extends base_controller {
 	         DB::instance(DB_NAME)->update('bags', $data, $where_clause);
 	         
 		# Send them back
-		Router::redirect("/items/index");
+		Router::redirect("/items/teams");
 	      
 	    }
 	  	   

@@ -477,3 +477,13 @@ Make friendly urls with yii
 db info 
 
 localhost username root password blank
+
+
+create new bag{
+
+}
+
+Email bing wil financial info
+
+
+

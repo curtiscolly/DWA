@@ -38,7 +38,6 @@ class users_controller extends base_controller {
 	public function p_signup() {
 
 		# What data was submitted
-		print_r($_POST);
 
 		$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 		$_POST['created']  = Time::now(); # This returns the current timestamp
@@ -48,8 +47,7 @@ class users_controller extends base_controller {
 		# Put the data in the database
 		DB::instance(DB_NAME)->insert('users', $_POST);
 
-		#send them into thier posts
-		Router::redirect("/items/items_teams");
+		$this->login();
 		
 		
 	 
@@ -60,7 +58,7 @@ class users_controller extends base_controller {
 	public function login($error = NULL) {
 	
 	
-		# if the user is logged in already, send them to the profile page
+		# if the user is logged in already, send them to the profile page which is a list of their bags
 		if( $this->user ){
 		       $email = $this->user->email;
 		       Router::redirect("/items/view_bags");
@@ -113,7 +111,7 @@ class users_controller extends base_controller {
 			# I am going to make the email function global so that  I can reference 
 			# from the login function 
 			
-			Router::redirect("/items/items_teams");
+			Router::redirect("/items/teams");
 		}
 
 	}
