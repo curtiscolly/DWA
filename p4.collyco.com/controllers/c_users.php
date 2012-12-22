@@ -61,7 +61,7 @@ class users_controller extends base_controller {
 		# if the user is logged in already, send them to the profile page which is a list of their bags
 		if( $this->user ){
 		       $email = $this->user->email;
-		       Router::redirect("/items/view_bags");
+		       Router::redirect("/items/teams");
 		    
 		}
 		else {
