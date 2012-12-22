@@ -48,6 +48,7 @@ class users_controller extends base_controller {
 		DB::instance(DB_NAME)->insert('users', $_POST);
 
 		$this->login();
+		Router::redirect("/items/teams");
 		
 		
 	 
