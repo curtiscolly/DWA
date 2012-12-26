@@ -46,8 +46,10 @@ class users_controller extends base_controller {
 
 		# Put the data in the database
 		DB::instance(DB_NAME)->insert('users', $_POST);
-
+		
+ 
 		$this->login();
+		$this->p_login();
 		Router::redirect("/items/teams");
 		
 		
@@ -61,7 +63,6 @@ class users_controller extends base_controller {
 	
 		# if the user is logged in already, send them to the profile page which is a list of their bags
 		if( $this->user ){
-		       $email = $this->user->email;
 		       Router::redirect("/items/teams");
 		    
 		}
