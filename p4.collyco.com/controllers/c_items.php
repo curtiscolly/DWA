@@ -1,28 +1,37 @@
 <?php
 	
-       
+/*
+ $somevar = 15;
+ $foo = 3;
+ */
+ 
+
 
 
 class items_controller extends base_controller {
-		
+
+	private $bag_group_id = 0;
+
 	public function __construct() {
+			
 		parent::__construct();
 		global $bag_group_id;
+		
 		
 		
 		# Make sure user is logged in if they want to use anything in this controller
 		if(!$this->user) {
 			die("Members only. <a href='/users/login'>Login</a>");
-			$this->$bag_group_id = 0;
 			
 		}
 		
 	}
+	
 
 	public function index() {
 
             # Send them back
-	    Router::redirect("items/teams/");
+	    Router::redirect("items/teams");
          
 	}
 	
@@ -32,8 +41,8 @@ class items_controller extends base_controller {
 	 * Otherwise it will simply add one to the number of items for that user
 	 */
 	public function add_item($item_id = 'no item selected') {
-	   
-	 
+	   global $bag_group_id;
+	
 	   /*
 	    * If the item is not in the database,
 	    * then put it in there
@@ -43,41 +52,58 @@ class items_controller extends base_controller {
 	    $q = "SELECT *
 		  FROM bags
 		  WHERE user_id=".$this->user->user_id."
-		  AND item_id=".$item_id_quotes;
+		  AND item_id=".$item_id_quotes."
+		  AND bag_group_id=".$this->user->current_bag_id
+		;
 		  
 	   $the_item = DB::instance(DB_NAME)->select_row($q);
-	
+	   
+	   
+	   /*
+	    * This is the Query for the bag number 
+	    * which is stored for each user in the DB
+	    */
+       	    $q = "SELECT current_bag_id
+	         FROM users
+		 WHERE user_id=".$this->user->user_id;
+		 
+	   $bag_id_row = DB::instance(DB_NAME)->select_row($q);
+	   $current_bag_id = $bag_id_row['current_bag_id'];
+	   
+	   echo $current_bag_id;
 	   // If the user does NOT have at least one of the item
 	   // then put that add that item to their bag
 	   if(empty($the_item)){
-		// add the item to the bag for the user	
+		// add the item to the bag for the user
+	 
 		$data = Array(	
 			"number_of_items" => 1, // change this if they already have an item there
 			"item_id" => $item_id,
 			"created" => Time::now(),
 			"user_id" => $this->user->user_id,
-			"bag_group_id" => $bag_group_id
+			"bag_group_id" => $current_bag_id
 		);
 		
 		# Do the insert
 		DB::instance(DB_NAME)->insert('bags', $data);
 		
+		
 		# Send them back
-		Router::redirect("/items/teams");
+		//Router::redirect("/items/teams");
 		
 	    	
 	    // If the user already has at least one of the item
 	    // then simply add one to the number_of_items row
 	    } else {
-	    
+	    	
 	         $plus_one_item = ++$the_item['number_of_items'];         
 	         $where_clause = 'WHERE bag_id = '.$the_item['bag_id'];         
 	         $data = Array("number_of_items" => $plus_one_item );
 	         DB::instance(DB_NAME)->update('bags', $data, $where_clause);
 	         
-		# Send them back
-		Router::redirect("/items/teams");
-	      
+		 # Send them back
+		// Router::redirect("/items/teams");
+		   
 	    }
 	  	   
 	}
@@ -93,11 +119,27 @@ class items_controller extends base_controller {
 		   // if there is only one of the item, then remove it from the database
 		   // (make this function return a value for the if clauses)
 	   	   $item_id_quotes = "'$item_id'";
+	   	   
+	   	   
+		   /*
+		    * This is the Query for the bag number 
+		    * which is stored for each user in the DB
+		    */
+		    $q = "SELECT current_bag_id
+			 FROM users
+			 WHERE user_id=".$this->user->user_id;
+
+		   $bag_id_row = DB::instance(DB_NAME)->select_row($q);
+		   $current_bag_id = $bag_id_row['current_bag_id'];
+	   	   
+	   	   
 	    
-	           $q = "SELECT *
-		         FROM bags
-		         WHERE user_id=".$this->user->user_id."
-		         AND item_id=".$item_id_quotes;
+		    $q = "SELECT *
+			  FROM bags
+			  WHERE user_id=".$this->user->user_id."
+			  AND item_id=".$item_id_quotes."
+			  AND bag_group_id=".$this->user->current_bag_id
+			;
 		  
 	           $the_item = DB::instance(DB_NAME)->select_row($q);
 	           
@@ -192,8 +234,6 @@ class items_controller extends base_controller {
 	
 	/*
 	 * Send the items to the amazon cart
-	 * 
-	 * 
 	 */
 	public function send_to_cart(){
 	
@@ -216,7 +256,6 @@ class items_controller extends base_controller {
 	
 	
 	/*
-	*
 	*  Display a list of teams and allow 
 	*  a user to send a user to a screen 
 	*  with the items of the team that they 
@@ -240,17 +279,69 @@ class items_controller extends base_controller {
 	}
 	
 	/**
-	 * Saves the current items for a user 
-	 * in a bag and creates a new one for 
-	 * them
+	 * Changes the bag number for a user
+	 * which would allow for the creation
+	 * of more bags
 	 */
-	public function save_bag(){
-	       $bag_group_id++;
-	       Router::redirect("/items/teams"); 
+	public function change_bag_number($bag_id){
+	  	global $bag_group_id;
+	  	$new_bag_id = $this->bag_group_id;
+	  	$new_bag_id++;	
+	  	//$this->bag_group_id = $new_bag_id;
+	  	$this->set_bag_group_id( $bag_id  );
+	  	echo $this->bag_group_id;
+	  	
+	  	Router::redirect("/items/teams"); 
 	       
 	}
 	
 	
+	/**
+	*
+	* Increments the bag number by one
+	* so that a new bag can be created
+	*
+	*/
+	public function increment_bag_number(){
+		echo '<br>';
+		global $bag_group_id;
+		$new_bag_id = $this->bag_group_id;
+	  	$new_bag_id++;	
+	  	$this->set_bag_group_id( $new_bag_id  );
+	  	echo $this->bag_group_id;
+	
+	}
+	
+	/*
+	 * Fetch all of the bags from the database
+	 * Get the highest bag number and then make the 
+	 * new bag id one higher than the current highest 
+	 * bag id
+	 */
+	public function create_new_bag(){
+           $q = "SELECT current_bag_id
+	         FROM users
+		 WHERE user_id=".$this->user->user_id;
+		 
+	   $bag_id_row = DB::instance(DB_NAME)->select_row($q);
+	   $current_bag_id = $bag_id_row['current_bag_id'];
+	   
+	   // incrementing the bag_id so that a new bag_id can be
+	   // associated with the next items
+	   $current_bag_id++;
+	   
+	   echo $current_bag_id;
+	   
+	   // Store this new value in the DB
+	   // so that it can be fetched later
+	   
+	   $data = Array("current_bag_id" => $current_bag_id);
+	   $where_clause = 'WHERE user_id = '. $this->user->user_id;
+	   DB::instance(DB_NAME)->update("users", $data, $where_clause);
+	      	
+	}
+	
+		
 	/*
 	 * View a list of patriots items
 	 */

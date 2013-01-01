@@ -454,9 +454,7 @@ xdebug
 rubber duck debugging
 chmod 0777
 
-12 php framework
-
-Ruby on Rails is a framework
+12 php frameworks
 
 "We are what we repeatedly do;
 Excellence, then is not an act but a habit" -Aristotle
@@ -483,7 +481,20 @@ create new bag{
 
 }
 
-Email bing wil financial info
+Get info on passing by reference in PHP
+AutoMagically
+
+13hr difference between here and Taiwan
+
+Strip Ts restaurant in WaterTown
+Chiu, Wen-Ting
+
+Send messages to Chicago.
+Code the Db connection for the app
+
+
+
+
 
 
 
