@@ -100,7 +100,7 @@ class items_controller extends base_controller {
 	         DB::instance(DB_NAME)->update('bags', $data, $where_clause);
 	         
 		 # Send them back
-		// Router::redirect("/items/teams");
+		 Router::redirect("/items/teams");
 		   
 	    }
 	  	   
