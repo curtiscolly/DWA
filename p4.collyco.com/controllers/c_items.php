@@ -70,7 +70,6 @@ class items_controller extends base_controller {
 	   $bag_id_row = DB::instance(DB_NAME)->select_row($q);
 	   $current_bag_id = $bag_id_row['current_bag_id'];
 	   
-	   echo $current_bag_id;
 	   // If the user does NOT have at least one of the item
 	   // then put that add that item to their bag
 	   if(empty($the_item)){
@@ -87,9 +86,8 @@ class items_controller extends base_controller {
 		# Do the insert
 		DB::instance(DB_NAME)->insert('bags', $data);
 		
-		
 		# Send them back
-		//Router::redirect("/items/teams");
+		Router::redirect("/items/teams");
 		
 	    	
 	    // If the user already has at least one of the item
