@@ -20,8 +20,7 @@
 	      
 	        <a href='/users/logout'>Logout</a>  
 	        <a href='/items/view_bags'>View Bags</a>
-	        <a href='/items/teams'>Create new bag</a>
-	        <a href='/items/save_bag'>Save this bag</a>
+	        <a href='/items/create_new_bag'>Create new bag</a>
 	        
    <? else: ?>
  	   <span id= 'topButtons'>
