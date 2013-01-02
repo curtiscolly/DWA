@@ -294,22 +294,6 @@ class items_controller extends base_controller {
 	}
 	
 	
-	/**
-	*
-	* Increments the bag number by one
-	* so that a new bag can be created
-	*
-	*/
-	public function increment_bag_number(){
-		echo '<br>';
-		global $bag_group_id;
-		$new_bag_id = $this->bag_group_id;
-	  	$new_bag_id++;	
-	  	$this->set_bag_group_id( $new_bag_id  );
-	  	echo $this->bag_group_id;
-	
-	}
-	
 	/*
 	 * Fetch all of the bags from the database
 	 * Get the highest bag number and then make the 
@@ -328,14 +312,14 @@ class items_controller extends base_controller {
 	   // associated with the next items
 	   $current_bag_id++;
 	   
-	   echo $current_bag_id;
-	   
 	   // Store this new value in the DB
 	   // so that it can be fetched later
 	   
 	   $data = Array("current_bag_id" => $current_bag_id);
 	   $where_clause = 'WHERE user_id = '. $this->user->user_id;
 	   DB::instance(DB_NAME)->update("users", $data, $where_clause);
+	   
+	   Router::redirect("/items/teams"); 
 	      	
 	}
 	
