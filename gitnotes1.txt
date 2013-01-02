@@ -492,6 +492,18 @@ Chiu, Wen-Ting
 Send messages to Chicago.
 Code the Db connection for the app
 
+Add 
+
+Git rid of the create new bag echo
+susan bags row
+9
+12
+0
+2
+1
+1357077374
+0
+
 
 
 
